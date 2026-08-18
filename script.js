@@ -1,55 +1,51 @@
 /**
  * ==========================================================================
- * HAPPY RAKSHA BANDHAN — BHURIYAAA CELEBRATION ENGINE
- * Designed with love by Bittu for Ansh (Bhuriya)
+ * HAPPY RAKSHA BANDHAN — RESPECTED BADE BHAI (TARACHAND BHAI)
+ * Crafted with reverence, gratitude & love by Bittu
  * ==========================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initSurpriseUnboxing();
-    initFestiveParticlesCanvas();
+    initWelcomeModal();
+    initFestivePetalsCanvas();
     initAudioEngine();
-    initVirtualRakhiCeremony();
-    initBrotherCoupons();
-    initShagunCalculator();
+    initSacredCeremony();
+    initBlessingsCards();
     initTiltPhysics();
     initMobileNav();
 });
 
 /* ==========================================================================
-   1. SURPRISE UNBOXING REVEAL
+   1. RESPECTFUL WELCOME MODAL
    ========================================================================== */
-function initSurpriseUnboxing() {
-    const surpriseOverlay = document.getElementById('surprise-overlay');
-    const openSurpriseBtn = document.getElementById('open-surprise-btn');
-    const giftBoxTrigger = document.getElementById('gift-box-trigger');
-    const heroCelebrateBtn = document.getElementById('hero-celebrate-btn');
+function initWelcomeModal() {
+    const welcomeOverlay = document.getElementById('welcome-overlay');
+    const enterBtn = document.getElementById('enter-celebration-btn');
+    const heroBlessingBtn = document.getElementById('hero-blessing-btn');
 
-    function triggerCelebration() {
-        if (surpriseOverlay) {
-            surpriseOverlay.classList.add('hidden');
+    function revealCelebration() {
+        if (welcomeOverlay) {
+            welcomeOverlay.classList.add('hidden');
         }
-        playAudioSfx('fanfare');
-        fireConfettiBurst();
+        playAudioSfx('conch');
+        fireGoldenConfetti();
 
-        // Extra burst after 400ms for grand effect
         setTimeout(() => {
-            fireConfettiBurst();
+            fireGoldenConfetti();
         }, 400);
     }
 
-    if (openSurpriseBtn) openSurpriseBtn.addEventListener('click', triggerCelebration);
-    if (giftBoxTrigger) giftBoxTrigger.addEventListener('click', triggerCelebration);
-    if (heroCelebrateBtn) heroCelebrateBtn.addEventListener('click', () => {
+    if (enterBtn) enterBtn.addEventListener('click', revealCelebration);
+    if (heroBlessingBtn) heroBlessingBtn.addEventListener('click', () => {
         playAudioSfx('chime');
-        fireConfettiBurst();
+        fireGoldenConfetti();
     });
 }
 
 /* ==========================================================================
-   2. FLOATING MARIGOLD PETALS & GOLDEN SPARKLES CANVAS
+   2. FLOATING MARIGOLD PETALS & GOLDEN PARTICLES CANVAS
    ========================================================================== */
-function initFestiveParticlesCanvas() {
+function initFestivePetalsCanvas() {
     const canvas = document.getElementById('festive-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -63,39 +59,37 @@ function initFestiveParticlesCanvas() {
     });
 
     const petals = [];
-    const petalCount = 45;
+    const petalCount = 42;
 
-    // Petal types: Marigold Yellow, Saffron Orange, Rose Pink, Gold Sparkle
     const colors = [
-        'rgba(251, 191, 36, 0.85)',   // Gold
-        'rgba(245, 158, 11, 0.85)',   // Saffron
-        'rgba(244, 63, 94, 0.8)',     // Rose Red
-        'rgba(236, 72, 153, 0.8)'     // Lotus Pink
+        'rgba(251, 191, 36, 0.85)',   // Saffron Gold
+        'rgba(217, 119, 6, 0.85)',    // Marigold
+        'rgba(185, 28, 28, 0.8)',     // Sacred Red
+        'rgba(254, 240, 138, 0.9)'    // Yellow
     ];
 
     class Petal {
         constructor() {
             this.reset();
-            this.y = Math.random() * height; // initial random distribution
+            this.y = Math.random() * height;
         }
 
         reset() {
             this.x = Math.random() * width;
             this.y = -20;
-            this.size = Math.random() * 8 + 6;
-            this.speedY = Math.random() * 1.5 + 0.8;
-            this.speedX = Math.sin(Math.random() * Math.PI) * 0.8;
+            this.size = Math.random() * 8 + 5;
+            this.speedY = Math.random() * 1.3 + 0.7;
             this.rotation = Math.random() * 360;
             this.rotSpeed = (Math.random() - 0.5) * 2;
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.isSparkle = Math.random() < 0.25;
-            this.oscillationSpeed = Math.random() * 0.02 + 0.01;
-            this.oscillationOffset = Math.random() * Math.PI * 2;
+            this.oscSpeed = Math.random() * 0.02 + 0.01;
+            this.oscOffset = Math.random() * Math.PI * 2;
         }
 
         update() {
             this.y += this.speedY;
-            this.x += Math.sin(this.y * this.oscillationSpeed + this.oscillationOffset) * 1.2;
+            this.x += Math.sin(this.y * this.oscSpeed + this.oscOffset) * 1.1;
             this.rotation += this.rotSpeed;
 
             if (this.y > height + 20) {
@@ -109,15 +103,13 @@ function initFestiveParticlesCanvas() {
             ctx.rotate((this.rotation * Math.PI) / 180);
 
             if (this.isSparkle) {
-                // Draw 4-point star sparkle
-                ctx.fillStyle = '#fde047';
+                ctx.fillStyle = '#fef08a';
                 ctx.shadowColor = '#f59e0b';
                 ctx.shadowBlur = 10;
                 ctx.beginPath();
                 ctx.arc(0, 0, this.size * 0.35, 0, Math.PI * 2);
                 ctx.fill();
             } else {
-                // Draw curved flower petal
                 ctx.fillStyle = this.color;
                 ctx.shadowColor = 'rgba(245, 158, 11, 0.4)';
                 ctx.shadowBlur = 6;
@@ -147,25 +139,25 @@ function initFestiveParticlesCanvas() {
 }
 
 /* ==========================================================================
-   3. SYNTHESIZED FESTIVE AUDIO ENGINE (WEB AUDIO API)
+   3. SYNTHESIZED TRADITIONAL MELODY ENGINE
    ========================================================================== */
 let audioCtx = null;
-let isAudioPlaying = false;
-let melodyInterval = null;
+let isMelodyActive = false;
+let ragaInterval = null;
 
 function initAudioEngine() {
     const audioToggle = document.getElementById('audio-toggle');
     if (!audioToggle) return;
 
     audioToggle.addEventListener('click', () => {
-        if (!isAudioPlaying) {
-            startFestiveMelody();
+        if (!isMelodyActive) {
+            startVedicMelody();
             audioToggle.classList.add('playing');
-            isAudioPlaying = true;
+            isMelodyActive = true;
         } else {
-            stopFestiveMelody();
+            stopVedicMelody();
             audioToggle.classList.remove('playing');
-            isAudioPlaying = false;
+            isMelodyActive = false;
         }
     });
 }
@@ -188,60 +180,44 @@ function playAudioSfx(type) {
         const now = ctx.currentTime;
 
         if (type === 'chime') {
-            const freqs = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+            const freqs = [440.00, 554.37, 659.25, 880.00]; // A Major auspicious chord
             freqs.forEach((f, i) => {
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(f, now + i * 0.07);
-                gain.gain.setValueAtTime(0.12, now + i * 0.07);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.07 + 0.4);
+                osc.frequency.setValueAtTime(f, now + i * 0.08);
+                gain.gain.setValueAtTime(0.12, now + i * 0.08);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.45);
                 osc.connect(gain);
                 gain.connect(ctx.destination);
-                osc.start(now + i * 0.07);
-                osc.stop(now + i * 0.07 + 0.4);
+                osc.start(now + i * 0.08);
+                osc.stop(now + i * 0.08 + 0.45);
             });
-        } else if (type === 'stamp') {
+        } else if (type === 'conch') {
+            // Auspicious conch / shankh chord simulation
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(160, now);
-            osc.frequency.exponentialRampToValueAtTime(50, now + 0.2);
-            gain.gain.setValueAtTime(0.25, now);
-            gain.gain.linearRampToValueAtTime(0.001, now + 0.2);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(261.63, now); // Middle C
+            osc.frequency.exponentialRampToValueAtTime(523.25, now + 0.6);
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.9);
             osc.connect(gain);
             gain.connect(ctx.destination);
             osc.start(now);
-            osc.stop(now + 0.2);
-        } else if (type === 'fanfare') {
-            const chords = [523.25, 659.25, 783.99, 1046.50];
-            chords.forEach((freq, idx) => {
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(freq, now + idx * 0.1);
-                gain.gain.setValueAtTime(0.15, now + idx * 0.1);
-                gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.1 + 0.8);
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-                osc.start(now + idx * 0.1);
-                osc.stop(now + idx * 0.1 + 0.8);
-            });
+            osc.stop(now + 0.9);
         }
-    } catch (e) {
-        // Audio policy
-    }
+    } catch (e) {}
 }
 
-function startFestiveMelody() {
+function startVedicMelody() {
     const ctx = getAudioContext();
     if (!ctx) return;
 
-    // Raga/Indian festive scale notes (Sa Re Ga Pa Dha Sa: C, D, E, G, A, C)
-    const scale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
-    let noteIndex = 0;
+    // Raga Yaman / Bhupali traditional notes (C, D, E, G, A, C)
+    const scale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 659.25];
 
-    melodyInterval = setInterval(() => {
+    ragaInterval = setInterval(() => {
         try {
             const now = ctx.currentTime;
             const osc = ctx.createOscillator();
@@ -251,138 +227,134 @@ function startFestiveMelody() {
             const freq = scale[Math.floor(Math.random() * scale.length)];
             osc.frequency.setValueAtTime(freq, now);
 
-            gain.gain.setValueAtTime(0.06, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+            gain.gain.setValueAtTime(0.07, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.85);
 
             osc.connect(gain);
             gain.connect(ctx.destination);
             osc.start(now);
-            osc.stop(now + 0.7);
-
-            noteIndex++;
+            osc.stop(now + 0.85);
         } catch (e) {}
-    }, 450);
+    }, 480);
 }
 
-function stopFestiveMelody() {
-    if (melodyInterval) {
-        clearInterval(melodyInterval);
-        melodyInterval = null;
+function stopVedicMelody() {
+    if (ragaInterval) {
+        clearInterval(ragaInterval);
+        ragaInterval = null;
     }
 }
 
 /* ==========================================================================
-   4. INTERACTIVE 4-STEP VIRTUAL RAKHI CEREMONY
+   4. SACRED VIRTUAL RAKHI RITUAL
    ========================================================================== */
-function initVirtualRakhiCeremony() {
+function initSacredCeremony() {
     let currentStep = 1;
 
-    const ritualBtn = document.getElementById('ritual-step-btn');
-    const ritualBtnText = document.getElementById('ritual-btn-text');
-    const statusMsg = document.getElementById('ritual-status-msg');
+    const actionBtn = document.getElementById('ceremony-action-btn');
+    const btnText = document.getElementById('ceremony-btn-text');
+    const statusMsg = document.getElementById('ceremony-status-msg');
 
     // Thali items
-    const diyaFlame = document.getElementById('diya-flame');
-    const aartiCircle = document.getElementById('aarti-circle');
+    const sacredFlame = document.getElementById('sacred-flame');
+    const aartiHalo = document.getElementById('aarti-halo');
     const tilakMark = document.getElementById('tilak-mark');
-    const tiedRakhi = document.getElementById('tied-rakhi');
-    const sweetEffect = document.getElementById('sweet-eating-effect');
+    const tiedSutra = document.getElementById('tied-sutra');
+    const pranaamBubble = document.getElementById('pranaam-bubble');
 
-    // Step indicators
-    const step1 = document.getElementById('step-ind-1');
-    const step2 = document.getElementById('step-ind-2');
-    const step3 = document.getElementById('step-ind-3');
-    const step4 = document.getElementById('step-ind-4');
+    // Step trackers
+    const pStep1 = document.getElementById('p-step-1');
+    const pStep2 = document.getElementById('p-step-2');
+    const pStep3 = document.getElementById('p-step-3');
+    const pStep4 = document.getElementById('p-step-4');
 
-    const conn1 = document.getElementById('conn-1');
-    const conn2 = document.getElementById('conn-2');
-    const conn3 = document.getElementById('conn-3');
+    const pLine1 = document.getElementById('p-line-1');
+    const pLine2 = document.getElementById('p-line-2');
+    const pLine3 = document.getElementById('p-line-3');
 
-    // Thali Clickable item triggers
-    const diyaItem = document.getElementById('diya-item');
-    const roliItem = document.getElementById('roli-item');
-    const rakhiItem = document.getElementById('rakhi-item');
-    const sweetItem = document.getElementById('sweet-item');
+    // Clickable thali triggers
+    const diyaTrigger = document.getElementById('diya-trigger');
+    const tilakTrigger = document.getElementById('tilak-trigger');
+    const rakhiTrigger = document.getElementById('rakhi-trigger');
+    const sweetsTrigger = document.getElementById('sweets-trigger');
 
-    if (diyaItem) diyaItem.addEventListener('click', () => { if (currentStep === 1) advanceRitual(); });
-    if (roliItem) roliItem.addEventListener('click', () => { if (currentStep === 2) advanceRitual(); });
-    if (rakhiItem) rakhiItem.addEventListener('click', () => { if (currentStep === 3) advanceRitual(); });
-    if (sweetItem) sweetItem.addEventListener('click', () => { if (currentStep === 4) advanceRitual(); });
+    if (diyaTrigger) diyaTrigger.addEventListener('click', () => { if (currentStep === 1) advanceRitual(); });
+    if (tilakTrigger) tilakTrigger.addEventListener('click', () => { if (currentStep === 2) advanceRitual(); });
+    if (rakhiTrigger) rakhiTrigger.addEventListener('click', () => { if (currentStep === 3) advanceRitual(); });
+    if (sweetsTrigger) sweetsTrigger.addEventListener('click', () => { if (currentStep === 4) advanceRitual(); });
 
-    if (ritualBtn) {
-        ritualBtn.addEventListener('click', advanceRitual);
+    if (actionBtn) {
+        actionBtn.addEventListener('click', advanceRitual);
     }
 
     function advanceRitual() {
         if (currentStep === 1) {
             // Step 1: Light Diya
-            diyaFlame.classList.add('lit');
-            aartiCircle.classList.add('active');
-            step1.classList.remove('active');
-            step1.classList.add('completed');
-            step2.classList.add('active');
-            conn1.classList.add('completed');
+            sacredFlame.classList.add('lit');
+            aartiHalo.classList.add('active');
+            pStep1.classList.remove('active');
+            pStep1.classList.add('completed');
+            pStep2.classList.add('active');
+            pLine1.classList.add('completed');
 
-            statusMsg.textContent = '✨ Aarti Diya is glowing! Step 2: Apply the sacred Roli-Chawal Tilak on Bhuriya\'s forehead.';
-            ritualBtnText.innerHTML = 'Apply Roli-Chawal Tilak 🔴';
+            statusMsg.textContent = 'चरण 2: आदरणीय बड़े भाई के मस्तक पर शुभ रोली-चंदन एवं अक्षत का तिलक लगाएं।';
+            btnText.innerHTML = 'Apply Chandan-Roli Tilak 🔴';
             currentStep = 2;
             playAudioSfx('chime');
 
         } else if (currentStep === 2) {
-            // Step 2: Tilak
+            // Step 2: Apply Tilak
             tilakMark.classList.add('applied');
-            step2.classList.remove('active');
-            step2.classList.add('completed');
-            step3.classList.add('active');
-            conn2.classList.add('completed');
+            pStep2.classList.remove('active');
+            pStep2.classList.add('completed');
+            pStep3.classList.add('active');
+            pLine2.classList.add('completed');
 
-            statusMsg.textContent = '🌸 Auspicious Tilak applied! Step 3: Tie the sacred golden Rakhi thread on Bhuriya\'s wrist.';
-            ritualBtnText.innerHTML = 'Tie Sacred Rakhi 🪢';
+            statusMsg.textContent = 'चरण 3: वैदिक मंत्रों के साथ आदरणीय बड़े भाई की कलाई पर पवित्र रक्षा सूत्र (राखी) बांधें।';
+            btnText.innerHTML = 'Tie Sacred Raksha Sutra 🪢';
             currentStep = 3;
             playAudioSfx('chime');
 
         } else if (currentStep === 3) {
             // Step 3: Tie Rakhi
-            tiedRakhi.classList.add('tied');
-            step3.classList.remove('active');
-            step3.classList.add('completed');
-            step4.classList.add('active');
-            conn3.classList.add('completed');
+            tiedSutra.classList.add('tied');
+            pStep3.classList.remove('active');
+            pStep3.classList.add('completed');
+            pStep4.classList.add('active');
+            pLine3.classList.add('completed');
 
-            statusMsg.textContent = '💖 Rakhi successfully tied with love! Step 4: Feed Bhuriya delicious Kaju Katli sweet.';
-            ritualBtnText.innerHTML = 'Feed Kaju Sweet 🍬';
+            statusMsg.textContent = 'चरण 4: बड़े भाई को काजू कतली मिष्ठान खिलाएं एवं सादर चरण स्पर्श कर आशीर्वाद लें।';
+            btnText.innerHTML = 'Offer Sweets & Take Blessings 🍬';
             currentStep = 4;
-            playAudioSfx('fanfare');
-            fireConfettiBurst();
+            playAudioSfx('conch');
+            fireGoldenConfetti();
 
         } else if (currentStep === 4) {
-            // Step 4: Feed Sweet
-            sweetEffect.classList.add('show');
-            step4.classList.remove('active');
-            step4.classList.add('completed');
+            // Step 4: Sweets & Pranaam
+            pranaamBubble.classList.add('show');
+            pStep4.classList.remove('active');
+            pStep4.classList.add('completed');
 
-            statusMsg.innerHTML = '🎉 <strong>Raksha Bandhan Ritual Completed!</strong> May God bless Bhuriya with lifelong joy & success! 🌸';
-            ritualBtnText.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart Ritual Ceremony';
+            statusMsg.innerHTML = '🎉 <strong>रक्षाबंधन का पावन अनुष्ठान पूर्ण हुआ!</strong> ईश्वर बड़े भाई पर सदा कृपा बनाए रखे! 🙏✨';
+            btnText.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart Sacred Ceremony';
             currentStep = 5;
-            playAudioSfx('fanfare');
-            fireConfettiBurst();
+            playAudioSfx('conch');
+            fireGoldenConfetti();
 
         } else {
-            // Reset ceremony
-            diyaFlame.classList.remove('lit');
-            aartiCircle.classList.remove('active');
+            // Reset
+            sacredFlame.classList.remove('lit');
+            aartiHalo.classList.remove('active');
             tilakMark.classList.remove('applied');
-            tiedRakhi.classList.remove('tied');
-            sweetEffect.classList.remove('show');
+            tiedSutra.classList.remove('tied');
+            pranaamBubble.classList.remove('show');
 
-            [step1, step2, step3, step4].forEach(s => {
-                s.classList.remove('active', 'completed');
-            });
-            [conn1, conn2, conn3].forEach(c => c.classList.remove('completed'));
+            [pStep1, pStep2, pStep3, pStep4].forEach(s => s.classList.remove('active', 'completed'));
+            [pLine1, pLine2, pLine3].forEach(l => l.classList.remove('completed'));
 
-            step1.classList.add('active');
-            statusMsg.textContent = 'Step 1: Tap below to light the Aarti Diya and begin the sacred blessing!';
-            ritualBtnText.innerHTML = 'Light The Aarti Diya 🪔';
+            pStep1.classList.add('active');
+            statusMsg.textContent = 'चरण 1: दीप प्रज्ज्वलित करके आदरणीय बड़े भाई की आरती शुरू करें।';
+            btnText.innerHTML = 'Light The Aarti Diya 🪔';
             currentStep = 1;
             playAudioSfx('chime');
         }
@@ -390,89 +362,29 @@ function initVirtualRakhiCeremony() {
 }
 
 /* ==========================================================================
-   5. BROTHER COUPONS REDEEM SYSTEM
+   5. AUSPICIOUS BLESSINGS CARDS
    ========================================================================== */
-function initBrotherCoupons() {
-    const redeemButtons = document.querySelectorAll('.coupon-redeem-btn');
+function initBlessingsCards() {
+    const cards = document.querySelectorAll('.blessing-card');
 
-    redeemButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const couponId = btn.getAttribute('data-coupon');
-            const stamp = document.getElementById(`stamp-${couponId}`);
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            cards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            playAudioSfx('chime');
+            fireGoldenConfetti();
 
-            if (stamp) {
-                stamp.classList.add('active');
-                btn.disabled = true;
-                btn.textContent = 'Claimed!';
-                playAudioSfx('stamp');
-                fireConfettiBurst();
+            const title = card.querySelector('h3').textContent;
+            const status = card.querySelector('.blessing-status');
+            if (status) {
+                status.textContent = 'Recited with Reverence 🙏';
             }
         });
     });
 }
 
 /* ==========================================================================
-   6. SHAGUN / GIFT CALCULATOR
-   ========================================================================== */
-function initShagunCalculator() {
-    const slider = document.getElementById('gift-slider');
-    const icon = document.getElementById('feedback-icon');
-    const title = document.getElementById('feedback-title');
-    const desc = document.getElementById('feedback-desc');
-    const confirmBtn = document.getElementById('confirm-gift-btn');
-
-    const giftLevels = {
-        '1': {
-            icon: '🍫',
-            title: '1 Dairy Milk Silk Chocolate',
-            desc: 'Sister\'s Verdict: "Hmm, sweet choice Bhuriya! But you can definitely do better than just one chocolate!" 😉'
-        },
-        '2': {
-            icon: '🍕',
-            title: 'Pizza Party + Ice Cream Feast',
-            desc: 'Sister\'s Verdict: "Now we\'re talking! Garlic bread and double cheese burst is mandatory!" 😋🍕'
-        },
-        '3': {
-            icon: '💵',
-            title: '₹1001 Cash Shagun Envelope',
-            desc: 'Sister\'s Verdict: "Auspicious & generous! Sister will save this for shopping!" 🛍️💖'
-        },
-        '4': {
-            icon: '📱',
-            title: 'Brand New Tech Gadget / Watch',
-            desc: 'Sister\'s Verdict: "Bhuriyaaa is the BEST brother on planet Earth! You are an absolute legend!" 🌟👑'
-        },
-        '5': {
-            icon: '👑',
-            title: 'Infinite Love + All Pocket Money!',
-            desc: 'Sister\'s Verdict: "Awww! Nothing beats your unconditional brotherly love (and your bank balance)! Happy Rakhi Bhuriyaaa!" 💖✨'
-        }
-    };
-
-    if (slider) {
-        slider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            const data = giftLevels[val];
-            if (!data) return;
-
-            icon.textContent = data.icon;
-            title.textContent = data.title;
-            desc.textContent = data.desc;
-            playAudioSfx('chime');
-        });
-    }
-
-    if (confirmBtn) {
-        confirmBtn.addEventListener('click', () => {
-            playAudioSfx('fanfare');
-            fireConfettiBurst();
-            alert('🎉 Gift Confirmed! Bittu has registered this Rakhi treat from Bhuriya! 💖');
-        });
-    }
-}
-
-/* ==========================================================================
-   7. 3D TILT PHYSICS
+   6. 3D TILT PHYSICS
    ========================================================================== */
 function initTiltPhysics() {
     const tiltCards = document.querySelectorAll('.tilt-card');
@@ -486,8 +398,8 @@ function initTiltPhysics() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            const rotateX = ((y - centerY) / centerY) * -7;
-            const rotateY = ((x - centerX) / centerX) * 7;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
         });
@@ -499,7 +411,7 @@ function initTiltPhysics() {
 }
 
 /* ==========================================================================
-   8. MOBILE NAVIGATION & SCROLL
+   7. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
     const mobileToggle = document.getElementById('mobile-toggle');
@@ -532,9 +444,9 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   9. CANVASES CONFETTI EXPLOSION ENGINE
+   8. GOLDEN CONFETTI BURST ENGINE
    ========================================================================== */
-function fireConfettiBurst() {
+function fireGoldenConfetti() {
     const canvas = document.getElementById('confetti-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -543,7 +455,7 @@ function fireConfettiBurst() {
     canvas.height = window.innerHeight;
 
     const confettiPieces = [];
-    const colors = ['#f59e0b', '#fbbf24', '#e11d48', '#ec4899', '#10b981', '#ffffff', '#ffd700'];
+    const colors = ['#f59e0b', '#fbbf24', '#fef08a', '#b91c1c', '#1e3a8a', '#ffffff', '#ffd700'];
 
     for (let i = 0; i < 110; i++) {
         confettiPieces.push({

@@ -1,52 +1,52 @@
 /* ==========================================================================
-   HAPPY RAKSHA BANDHAN CELEBRATION — FOR BHURIYAAA (ANSH)
-   ROYAL FESTIVE & MODERN GLASSMORPHISM DESIGN SYSTEM
+   HAPPY RAKSHA BANDHAN — RESPECTED BADE BHAI (TARACHAND BHAI)
+   REGAL VEDIC & MODERN GLASSMORPHISM DESIGN SYSTEM
    ========================================================================== */
 
 :root {
-    /* Royal Indian Festive Color Palette */
-    --gold-primary: #f59e0b;
+    /* Royal Regal Festive Palette */
+    --gold-primary: #d97706;
     --gold-light: #fbbf24;
-    --gold-glow: rgba(245, 158, 11, 0.5);
-    --gold-shine: linear-gradient(135deg, #ffd700 0%, #ffae19 50%, #d48806 100%);
-    
-    --crimson-primary: #e11d48;
-    --crimson-light: #f43f5e;
-    --crimson-dark: #881337;
-    --crimson-glow: rgba(225, 29, 72, 0.5);
-    
-    --pink-lotus: #ec4899;
-    --pink-glow: rgba(236, 72, 153, 0.4);
-    
-    --marigold-orange: #ff781f;
-    --emerald-green: #10b981;
-    
-    --bg-dark: #0d0818;
-    --bg-surface: #170f28;
-    --bg-glass: rgba(29, 17, 48, 0.72);
-    --bg-glass-hover: rgba(43, 26, 71, 0.88);
-    
-    --border-gold: rgba(251, 191, 36, 0.28);
-    --border-glow: rgba(245, 158, 11, 0.5);
+    --gold-shimmer: #fef08a;
+    --gold-glow: rgba(245, 158, 11, 0.45);
+    --gold-gradient: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
+
+    --royal-blue: #1e3a8a;
+    --royal-blue-glow: rgba(30, 58, 138, 0.45);
+    --navy-deep: #0b0d1b;
+    --navy-surface: #141733;
+
+    --crimson-sacred: #b91c1c;
+    --crimson-light: #dc2626;
+    --crimson-glow: rgba(185, 28, 28, 0.4);
+
+    --saffron: #ea580c;
+    --emerald: #059669;
+
+    --bg-dark: #080914;
+    --bg-card: rgba(20, 23, 51, 0.72);
+    --bg-card-hover: rgba(28, 33, 74, 0.88);
+
+    --border-gold: rgba(251, 191, 36, 0.3);
+    --border-glow: rgba(245, 158, 11, 0.6);
     --border-glass: rgba(255, 255, 255, 0.1);
-    
-    --text-light: #fffdfa;
-    --text-muted: #d1c4e9;
-    --text-dim: #9575cd;
-    
+
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --text-dim: #94a3b8;
+
     --font-heading: 'Outfit', sans-serif;
+    --font-serif: 'Cinzel', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-hindi: 'Tiro Devanagari Hindi', serif;
     --font-cursive: 'Dancing Script', cursive;
-    --font-script: 'Great Vibes', cursive;
-    
-    --radius-sm: 10px;
-    --radius-md: 18px;
-    --radius-lg: 26px;
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
     --radius-full: 9999px;
-    
-    --shadow-gold: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
-    --shadow-crimson: 0 10px 30px -10px rgba(225, 29, 72, 0.4);
-    
+
+    --shadow-gold: 0 10px 30px -10px rgba(245, 158, 11, 0.35);
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -67,14 +67,14 @@ html {
 body {
     font-family: var(--font-body);
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
 }
 
-/* Fixed Canvas for Floating Marigold Petals & Sparkles */
+/* Canvas Elements */
 #festive-canvas {
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ body {
     height: 100vh;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 #confetti-canvas {
@@ -93,48 +93,48 @@ body {
     z-index: 99999;
 }
 
-/* Ambient Festive Glowing Background Orbs */
+/* Ambient Glowing Background Orbs */
 .ambient-glow {
     position: fixed;
     border-radius: 50%;
     filter: blur(140px);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.35;
-    animation: festiveFloat 16s ease-in-out infinite alternate;
+    opacity: 0.28;
+    animation: glowFloat 18s ease-in-out infinite alternate;
 }
 
 .glow-gold {
-    top: -10%;
-    right: 5%;
-    width: 500px;
-    height: 500px;
+    top: -5%;
+    right: -5%;
+    width: 550px;
+    height: 550px;
     background: var(--gold-primary);
 }
 
-.glow-crimson {
-    bottom: 10%;
+.glow-royal-blue {
+    bottom: 15%;
     left: -5%;
-    width: 550px;
-    height: 550px;
-    background: var(--crimson-primary);
+    width: 600px;
+    height: 600px;
+    background: var(--royal-blue);
     animation-delay: -6s;
 }
 
-.glow-pink {
-    top: 45%;
-    left: 40%;
+.glow-crimson {
+    top: 40%;
+    left: 35%;
     width: 450px;
     height: 450px;
-    background: var(--pink-lotus);
-    animation-delay: -11s;
-    opacity: 0.2;
+    background: var(--crimson-sacred);
+    animation-delay: -12s;
+    opacity: 0.18;
 }
 
-@keyframes festiveFloat {
+@keyframes glowFloat {
     0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-50px, 40px) scale(1.1); }
-    100% { transform: translate(40px, -60px) scale(0.95); }
+    50% { transform: translate(-40px, 50px) scale(1.08); }
+    100% { transform: translate(50px, -40px) scale(0.95); }
 }
 
 /* Common Layout Containers */
@@ -162,24 +162,24 @@ body {
 
 /* Glassmorphism Panel */
 .glass-panel {
-    background: var(--bg-glass);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--border-gold);
     border-radius: var(--radius-lg);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(245, 158, 11, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.08);
     transition: all var(--transition-base);
 }
 
 .glass-panel:hover {
     border-color: var(--gold-light);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px var(--gold-glow);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px var(--gold-glow);
 }
 
 /* Typography Helpers */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--text-light);
+    color: var(--text-main);
     line-height: 1.25;
 }
 
@@ -188,10 +188,10 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.45rem 1.2rem;
-    background: rgba(245, 158, 11, 0.15);
+    background: rgba(245, 158, 11, 0.12);
     border: 1px solid var(--border-gold);
     border-radius: var(--radius-full);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--gold-light);
     margin-bottom: 1rem;
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    font-size: clamp(2.2rem, 4.5vw, 3rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.1rem);
     font-weight: 800;
     margin-bottom: 0.75rem;
 }
@@ -232,54 +232,30 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.btn-rakhi-primary {
-    background: linear-gradient(135deg, var(--crimson-primary), var(--marigold-orange));
-    color: #ffffff;
-    box-shadow: 0 6px 20px var(--crimson-glow);
-}
-
-.btn-rakhi-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px var(--crimson-glow);
-    filter: brightness(1.1);
-}
-
-.btn-rakhi-gold {
-    background: var(--gold-shine);
-    color: #451a03;
+.btn-royal-gold {
+    background: var(--gold-gradient);
+    color: #3b1a03;
     font-weight: 800;
     box-shadow: 0 6px 25px var(--gold-glow);
 }
 
-.btn-rakhi-gold:hover {
-    transform: translateY(-3px) scale(1.03);
+.btn-royal-gold:hover {
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 10px 35px var(--gold-glow);
     filter: brightness(1.08);
 }
 
-.btn-rakhi-secondary {
-    background: rgba(255, 255, 255, 0.08);
+.btn-royal-outline {
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-gold);
-    color: var(--text-light);
+    color: var(--text-main);
 }
 
-.btn-rakhi-secondary:hover {
-    background: rgba(245, 158, 11, 0.18);
+.btn-royal-outline:hover {
+    background: rgba(245, 158, 11, 0.15);
     border-color: var(--gold-light);
     color: var(--gold-light);
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--border-gold);
-    color: var(--gold-light);
-}
-
-.btn-outline:hover {
-    background: var(--gold-shine);
-    color: #451a03;
     transform: translateY(-2px);
 }
 
@@ -317,7 +293,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     font-size: 1.1rem;
     transition: all var(--transition-fast);
-    position: relative;
 }
 
 .icon-btn:hover {
@@ -326,12 +301,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   🎁 1. SURPRISE UNBOXING REVEAL MODAL
+   🎁 1. RESPECTFUL WELCOME MODAL / PRANAAM OVERLAY
    ========================================================================== */
-.surprise-overlay {
+.welcome-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(8, 4, 18, 0.94);
+    background: rgba(6, 8, 18, 0.94);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     display: flex;
@@ -339,107 +314,91 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     padding: 1.5rem;
     z-index: 10000;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.surprise-overlay.hidden {
+.welcome-overlay.hidden {
     opacity: 0;
     pointer-events: none;
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
-.gift-box-wrapper {
-    max-width: 520px;
+.welcome-modal-card {
+    max-width: 560px;
     width: 100%;
-}
-
-.gift-card-popup {
-    padding: 3rem 2rem;
+    padding: 3rem 2.2rem;
     text-align: center;
     border: 2px solid var(--gold-light);
     box-shadow: 0 0 50px var(--gold-glow), 0 25px 60px rgba(0, 0, 0, 0.8);
     position: relative;
-    overflow: hidden;
 }
 
-.gift-icon-container {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 1.5rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.glowing-halo {
-    position: absolute;
-    inset: -15px;
-    background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: rotateHalo 6s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes rotateHalo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.gift-box-icon {
+.royal-emblem {
     position: relative;
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--crimson-primary), var(--gold-primary));
+    margin: 0 auto 1.25rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    color: #ffffff;
+}
+
+.namaste-icon-wrap {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--crimson-sacred), var(--gold-primary));
+    border: 3px solid var(--gold-shimmer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 0 30px var(--gold-glow);
-    animation: giftWiggle 2.5s ease-in-out infinite;
-    cursor: pointer;
 }
 
-@keyframes giftWiggle {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    20% { transform: rotate(-10deg) scale(1.05); }
-    40% { transform: rotate(10deg) scale(1.05); }
-    60% { transform: rotate(-6deg) scale(1.02); }
-    80% { transform: rotate(6deg) scale(1.02); }
+.namaste-emoji {
+    font-size: 2.8rem;
+    animation: namastePulse 2s ease-in-out infinite alternate;
 }
 
-.gift-badge {
+@keyframes namastePulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.12); }
+}
+
+.royal-tag {
     display: inline-block;
-    padding: 0.35rem 1rem;
-    background: rgba(225, 29, 72, 0.25);
-    border: 1px solid var(--crimson-light);
+    padding: 0.35rem 1.1rem;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid var(--gold-light);
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
+    font-family: var(--font-hindi);
+    font-size: 0.92rem;
     font-weight: 700;
-    color: var(--pink-lotus);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    color: var(--gold-light);
     margin-bottom: 1rem;
 }
 
-.gift-title {
-    font-size: 2rem;
+.welcome-title {
+    font-size: 2.1rem;
     font-weight: 800;
     margin-bottom: 0.75rem;
 }
 
-.bhuriya-glow {
-    color: var(--gold-light);
-    text-shadow: 0 0 20px var(--gold-glow);
-    font-family: var(--font-cursive);
-    font-size: 1.2em;
-}
-
-.gift-subtext {
+.welcome-subtitle {
     color: var(--text-muted);
     font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.sanskrit-shloka-mini {
+    font-family: var(--font-hindi);
+    font-size: 0.95rem;
+    color: var(--gold-shimmer);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--gold-light);
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -459,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar.scrolled {
     padding: 0.75rem 0;
-    background: rgba(13, 8, 24, 0.92);
+    background: rgba(11, 13, 27, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-gold);
@@ -480,21 +439,19 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-heading);
-    font-size: 1.45rem;
+    font-size: 1.35rem;
     font-weight: 800;
     text-decoration: none;
-    color: var(--text-light);
+    color: var(--text-main);
 }
 
-.rakhi-symbol {
-    font-size: 1.7rem;
-    animation: badgeFloat 3s ease-in-out infinite alternate;
+.logo-icon {
+    font-size: 1.6rem;
 }
 
-.accent-name {
+.name-highlight {
     color: var(--gold-light);
-    font-family: var(--font-cursive);
-    font-size: 1.2em;
+    font-family: var(--font-serif);
 }
 
 .nav-list {
@@ -526,8 +483,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link.active {
-    color: #451a03;
-    background: var(--gold-shine);
+    color: #3b1a03;
+    background: var(--gold-gradient);
     box-shadow: 0 2px 12px var(--gold-glow);
 }
 
@@ -537,7 +494,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.75rem;
 }
 
-.music-wave {
+.music-bars {
     display: flex;
     align-items: flex-end;
     gap: 2px;
@@ -545,7 +502,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 4px;
 }
 
-.music-wave span {
+.music-bars span {
     width: 2px;
     height: 4px;
     background: var(--gold-light);
@@ -553,11 +510,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: height 0.2s ease;
 }
 
-.audio-btn.playing .music-wave span:nth-child(1) { animation: wave 0.8s infinite ease-in-out; }
-.audio-btn.playing .music-wave span:nth-child(2) { animation: wave 0.8s 0.2s infinite ease-in-out; }
-.audio-btn.playing .music-wave span:nth-child(3) { animation: wave 0.8s 0.4s infinite ease-in-out; }
+.audio-btn.playing .music-bars span:nth-child(1) { animation: barDance 0.8s infinite ease-in-out; }
+.audio-btn.playing .music-bars span:nth-child(2) { animation: barDance 0.8s 0.2s infinite ease-in-out; }
+.audio-btn.playing .music-bars span:nth-child(3) { animation: barDance 0.8s 0.4s infinite ease-in-out; }
 
-@keyframes wave {
+@keyframes barDance {
     0%, 100% { height: 3px; }
     50% { height: 12px; }
 }
@@ -566,8 +523,8 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 32px;
-    height: 22px;
+    width: 30px;
+    height: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -576,15 +533,15 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-toggle span {
     display: block;
     width: 100%;
-    height: 2.5px;
+    height: 2px;
     background-color: var(--gold-light);
     border-radius: 2px;
     transition: all var(--transition-base);
 }
 
-.mobile-toggle.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.mobile-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .mobile-toggle.active span:nth-child(2) { opacity: 0; }
-.mobile-toggle.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+.mobile-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* ==========================================================================
    3. HERO SECTION
@@ -605,43 +562,38 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.festival-pill {
+.reverence-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     padding: 0.45rem 1.2rem;
-    background: rgba(225, 29, 72, 0.2);
-    border: 1px solid var(--crimson-light);
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid var(--gold-light);
     border-radius: var(--radius-full);
-    font-size: 0.9rem;
+    font-family: var(--font-hindi);
+    font-size: 0.92rem;
     font-weight: 700;
-    color: var(--pink-lotus);
+    color: var(--gold-shimmer);
     margin-bottom: 1.5rem;
-    box-shadow: 0 0 15px var(--crimson-glow);
+    box-shadow: 0 0 15px var(--gold-glow);
 }
 
-.hero-main-title {
-    font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+.hero-title {
+    font-size: clamp(2.5rem, 5.5vw, 4.2rem);
     font-weight: 900;
-    letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
     line-height: 1.15;
 }
 
-.bhuriya-hero-text {
-    font-family: var(--font-cursive);
+.bade-bhai-text {
+    font-family: var(--font-serif);
     color: var(--gold-light);
-    font-size: 1.2em;
+    font-size: 1.15em;
     display: inline-block;
-    animation: glowPulse 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 25px var(--gold-glow);
 }
 
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 15px var(--gold-glow); }
-    100% { text-shadow: 0 0 35px var(--gold-light), 0 0 50px var(--gold-primary); }
-}
-
-.hero-subtext {
+.hero-subtitle {
     font-size: 1.18rem;
     color: var(--text-muted);
     max-width: 580px;
@@ -649,50 +601,47 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7;
 }
 
-.hero-subtext strong {
+.hero-subtitle strong {
     color: var(--gold-light);
 }
 
-.hero-action-buttons {
+.hero-cta-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2.5rem;
 }
 
-.quote-card {
+.shloka-banner {
     padding: 1.5rem 1.8rem;
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
     border-left: 4px solid var(--gold-light);
 }
 
-.quote-icon {
-    font-size: 1.5rem;
+.shloka-icon {
+    font-size: 2rem;
     color: var(--gold-light);
-    margin-bottom: 0.6rem;
-    opacity: 0.8;
+    flex-shrink: 0;
 }
 
-.quote-text {
-    font-family: var(--font-cursive);
-    font-size: 1.35rem;
-    color: var(--text-light);
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+.sanskrit-text {
+    font-family: var(--font-hindi);
+    font-size: 1.12rem;
+    color: var(--gold-shimmer);
+    line-height: 1.6;
+    margin-bottom: 0.35rem;
 }
 
-.quote-author {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+.shloka-meaning {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-/* 3D Rakhi Emblem Showcase Card */
-.rakhi-showcase-card {
-    background: var(--bg-glass);
+/* 3D Royal Rakhi Showcase Card */
+.royal-rakhi-card {
+    background: var(--bg-card);
     backdrop-filter: blur(20px);
     border: 2px solid var(--border-gold);
     border-radius: var(--radius-lg);
@@ -700,24 +649,28 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 35px var(--gold-glow);
     position: relative;
-    overflow: hidden;
     transform-style: preserve-3d;
 }
 
-.rakhi-aura {
+.card-glow-aura {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
     border-radius: 50%;
-    animation: rotateHalo 8s linear infinite;
+    animation: rotateAura 8s linear infinite;
     pointer-events: none;
 }
 
-.rakhi-circle-container {
+@keyframes rotateAura {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.royal-mandala-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -725,88 +678,89 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.rakhi-thread {
+.sacred-thread {
     flex: 1;
     height: 6px;
     background: repeating-linear-gradient(
         90deg,
-        #e11d48 0px,
-        #e11d48 10px,
-        #fbbf24 10px,
-        #fbbf24 20px,
-        #10b981 20px,
-        #10b981 30px
+        #b91c1c 0px,
+        #b91c1c 12px,
+        #f59e0b 12px,
+        #f59e0b 24px,
+        #1e3a8a 24px,
+        #1e3a8a 36px
     );
     border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.rakhi-mandala-center {
-    position: relative;
+.royal-mandala-center {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: radial-gradient(circle, #ffd700 0%, #b45309 100%);
-    box-shadow: 0 0 25px var(--gold-glow), inset 0 0 15px #ffffff;
+    background: radial-gradient(circle, #fef08a 0%, #d97706 80%, #78350f 100%);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 25px var(--gold-glow);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
-    animation: rotateMandala 20s linear infinite;
+    animation: mandalaSpin 25s linear infinite;
 }
 
-@keyframes rotateMandala {
+@keyframes mandalaSpin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-.mandala-gold-ring {
-    width: 90px;
-    height: 90px;
+.mandala-middle-gold {
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
-    border: 3px dashed #ffffff;
+    border: 2px dashed #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.mandala-inner-ruby {
-    width: 60px;
-    height: 60px;
+.mandala-gem-ruby {
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
-    background: radial-gradient(circle, #f43f5e 0%, #881337 100%);
-    box-shadow: 0 0 15px rgba(244, 63, 94, 0.8);
+    background: radial-gradient(circle, #dc2626 0%, #7f1d1d 100%);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.om-symbol {
-    font-size: 2rem;
-    color: #ffd700;
+.royal-shree {
+    font-family: var(--font-hindi);
+    font-size: 1.8rem;
+    color: #fef08a;
     font-weight: bold;
     text-shadow: 0 0 8px #ffffff;
 }
 
-.rakhi-card-info h3 {
+.rakhi-title {
     font-size: 1.5rem;
     margin-bottom: 0.35rem;
 }
 
-.rakhi-tagline {
+.rakhi-caption {
     font-size: 0.92rem;
     color: var(--text-muted);
     margin-bottom: 1.25rem;
 }
 
-.blessing-badges {
+.virtue-chips {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
 }
 
-.bless-chip {
+.chip {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -819,15 +773,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE VIRTUAL RAKHI CEREMONY SECTION
+   4. SACRED RAKHI RITUAL SECTION
    ========================================================================== */
-.ceremony-layout {
+.ceremony-card {
     padding: 2.5rem;
     max-width: 950px;
     margin: 0 auto;
 }
 
-.ritual-steps-bar {
+.ritual-progress-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -835,7 +789,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.ritual-step-indicator {
+.progress-step {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -843,47 +797,46 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.step-num {
-    width: 38px;
-    height: 38px;
+.step-icon {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     border: 2px solid var(--border-gold);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
     font-size: 0.95rem;
     color: var(--text-muted);
     transition: all var(--transition-base);
 }
 
-.step-label {
+.step-title {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-dim);
     transition: color var(--transition-base);
 }
 
-.ritual-step-indicator.active .step-num {
-    background: var(--gold-shine);
-    color: #451a03;
+.progress-step.active .step-icon {
+    background: var(--gold-gradient);
+    color: #3b1a03;
     border-color: #ffffff;
     box-shadow: 0 0 18px var(--gold-glow);
     transform: scale(1.15);
 }
 
-.ritual-step-indicator.active .step-label {
+.progress-step.active .step-title {
     color: var(--gold-light);
 }
 
-.ritual-step-indicator.completed .step-num {
-    background: var(--emerald-green);
+.progress-step.completed .step-icon {
+    background: var(--emerald);
     color: #ffffff;
-    border-color: var(--emerald-green);
+    border-color: var(--emerald);
 }
 
-.step-connector {
+.step-line {
     flex: 1;
     height: 3px;
     background: rgba(255, 255, 255, 0.1);
@@ -891,33 +844,36 @@ h1, h2, h3, h4, h5, h6 {
     transition: background var(--transition-base);
 }
 
-.step-connector.completed {
+.step-line.completed {
     background: var(--gold-primary);
 }
 
-/* Thali Stage */
-.thali-stage {
+/* Thali Stage Grid */
+.thali-stage-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     align-items: center;
     margin-bottom: 2.5rem;
     background: rgba(0, 0, 0, 0.25);
-    padding: 2rem;
+    padding: 2.2rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-gold);
 }
 
-/* Pooja Thali Graphic */
-.pooja-thali-graphic {
+.brass-thali-container {
+    display: flex;
+    justify-content: center;
+}
+
+.brass-thali {
     position: relative;
     width: 280px;
     height: 280px;
-    margin: 0 auto;
     border-radius: 50%;
-    background: radial-gradient(circle, #eab308 0%, #a16207 70%, #713f12 100%);
+    background: radial-gradient(circle, #fde047 0%, #ca8a04 70%, #854d0e 100%);
     border: 8px solid #fef08a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -936,7 +892,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.15);
 }
 
-.item-name {
+.thali-label {
     font-size: 0.72rem;
     font-weight: 700;
     color: #ffffff;
@@ -944,91 +900,75 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 2px;
 }
 
-.diya-item {
-    top: 25px;
-}
+.diya-box { top: 25px; }
 
-.diya-body {
-    font-size: 2rem;
-}
+.diya-art { font-size: 2rem; }
 
-.diya-flame {
+.sacred-flame {
     width: 12px;
     height: 18px;
     background: radial-gradient(ellipse at bottom, #ffffff 0%, #fde047 30%, #ef4444 80%);
     border-radius: 50% 50% 20% 20%;
     margin-bottom: -4px;
     box-shadow: 0 0 15px #f59e0b, 0 0 25px #ef4444;
-    animation: flicker 0.15s infinite alternate;
+    animation: flameDance 0.15s infinite alternate;
     opacity: 0.3;
     transition: opacity 0.5s ease;
 }
 
-.diya-flame.lit {
+.sacred-flame.lit {
     opacity: 1;
 }
 
-@keyframes flicker {
+@keyframes flameDance {
     0% { transform: scale(1) rotate(-2deg); }
     100% { transform: scale(1.15) rotate(2deg); }
 }
 
-.roli-item {
-    left: 30px;
-    bottom: 45px;
-}
+.tilak-box { left: 30px; bottom: 45px; }
 
-.roli-dish {
+.chandan-cup {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #be123c;
-    border: 2px solid #fbbf24;
+    background: #b91c1c;
+    border: 2px solid #fde047;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-.roli-dish::after {
-    content: '🔴';
-    font-size: 1rem;
-}
+.rakhi-box { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-.rakhi-item {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.glowing-rakhi-visual {
+.central-rakhi-glow {
     font-size: 2.8rem;
     filter: drop-shadow(0 0 10px var(--gold-light));
-    animation: badgeFloat 2s ease-in-out infinite alternate;
+    animation: iconFloat 2s ease-in-out infinite alternate;
 }
 
-.sweet-item {
-    right: 30px;
-    bottom: 45px;
-}
+.sweets-box { right: 30px; bottom: 45px; }
+.kaju-plate { font-size: 2rem; }
 
-.sweets-plate {
-    font-size: 2rem;
-}
-
-/* Brother Avatar Ceremony Display */
-.ceremony-avatar-box {
+/* Brother Avatar Display */
+.avatar-ceremony-display {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.brother-avatar {
+.bade-bhai-avatar {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.avatar-crown-icon {
+    font-size: 1.5rem;
+    margin-bottom: -8px;
+    z-index: 2;
 }
 
 .avatar-head {
@@ -1038,6 +978,7 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, #fed7aa, #fcd34d);
     border: 4px solid var(--border-gold);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -1045,7 +986,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .avatar-face {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1078,25 +1018,25 @@ h1, h2, h3, h4, h5, h6 {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #1e1b4b;
+    background: #0f172a;
 }
 
-.avatar-smile {
+.avatar-gentle-smile {
     width: 24px;
     height: 12px;
-    border-bottom: 3px solid #1e1b4b;
+    border-bottom: 3px solid #0f172a;
     border-radius: 0 0 12px 12px;
 }
 
-.avatar-arm {
+.avatar-body {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.avatar-wrist {
-    width: 140px;
+.wrist-zone {
+    width: 150px;
     height: 44px;
     border-radius: 22px;
     background: linear-gradient(135deg, #fed7aa, #fcd34d);
@@ -1108,20 +1048,20 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.tied-rakhi {
+.tied-raksha-sutra {
     display: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
-    color: #881337;
-    background: #fde047;
+    color: #78350f;
+    background: #fef08a;
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-full);
-    border: 2px solid #e11d48;
-    box-shadow: 0 0 10px rgba(225, 29, 72, 0.8);
+    border: 2px solid #b91c1c;
+    box-shadow: 0 0 10px rgba(185, 28, 28, 0.8);
     animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.tied-rakhi.tied {
+.tied-raksha-sutra.tied {
     display: block;
 }
 
@@ -1130,33 +1070,35 @@ h1, h2, h3, h4, h5, h6 {
     100% { transform: scale(1); opacity: 1; }
 }
 
-.wrist-label {
+.wrist-tag {
     font-size: 0.75rem;
     font-weight: 700;
     color: #451a03;
 }
 
-.sweet-eating-effect {
+.pranaam-speech-bubble {
     position: absolute;
-    top: -25px;
-    background: var(--gold-shine);
-    color: #451a03;
-    padding: 0.35rem 0.8rem;
+    top: -35px;
+    background: var(--gold-gradient);
+    color: #3b1a03;
+    padding: 0.45rem 1rem;
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
-    font-weight: 800;
+    font-family: var(--font-hindi);
+    font-size: 0.95rem;
+    font-weight: 700;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px var(--gold-glow);
+    white-space: nowrap;
 }
 
-.sweet-eating-effect.show {
+.pranaam-speech-bubble.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-.aarti-circle {
+.aarti-halo {
     position: absolute;
     inset: -20px;
     border-radius: 50%;
@@ -1166,7 +1108,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.5s ease;
 }
 
-.aarti-circle.active {
+.aarti-halo.active {
     opacity: 0.8;
     animation: rotateAarti 3s linear infinite;
 }
@@ -1176,8 +1118,7 @@ h1, h2, h3, h4, h5, h6 {
     to { transform: rotate(360deg); }
 }
 
-/* Ritual Action Footer */
-.ritual-action-footer {
+.ceremony-control-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1185,7 +1126,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.25rem;
 }
 
-.ritual-status-message {
+.ceremony-status {
+    font-family: var(--font-hindi);
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--gold-light);
@@ -1193,164 +1135,123 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   5. SIBLING MEMORIES GRID
+   5. TRIBUTE TO BADE BHAI GRID
    ========================================================================== */
-.memories-grid {
+.tribute-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 2rem;
 }
 
-.memory-card {
-    padding: 2rem;
+.tribute-card {
+    padding: 2.2rem 1.8rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     transform-style: preserve-3d;
 }
 
-.memory-icon-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.icon-circle {
-    width: 52px;
-    height: 52px;
+.tribute-icon-wrap {
+    width: 56px;
+    height: 56px;
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
-.icon-circle.gold { background: rgba(245, 158, 11, 0.18); color: var(--gold-light); border: 1px solid var(--border-gold); }
-.icon-circle.crimson { background: rgba(225, 29, 72, 0.18); color: var(--crimson-light); border: 1px solid var(--crimson-glow); }
-.icon-circle.blue { background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
-.icon-circle.emerald { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+.tribute-icon-wrap.gold { background: rgba(245, 158, 11, 0.15); color: var(--gold-light); border: 1px solid var(--border-gold); }
+.tribute-icon-wrap.crimson { background: rgba(185, 28, 28, 0.15); color: var(--crimson-light); border: 1px solid var(--crimson-glow); }
+.tribute-icon-wrap.blue { background: rgba(30, 58, 138, 0.2); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.4); }
+.tribute-icon-wrap.emerald { background: rgba(5, 150, 105, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.4); }
 
-.memory-tag {
-    font-size: 0.78rem;
+.tribute-tag {
+    font-family: var(--font-hindi);
+    font-size: 0.85rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-dim);
+    color: var(--gold-shimmer);
 }
 
-.memory-card h3 {
-    font-size: 1.25rem;
+.tribute-card h3 {
+    font-size: 1.3rem;
 }
 
-.memory-card p {
+.tribute-card p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.6;
-    flex: 1;
-}
-
-.memory-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.85rem;
-    color: var(--text-dim);
 }
 
 /* ==========================================================================
-   6. BROTHER COUPONS TICKETS
+   6. AUSPICIOUS BLESSINGS CARD GENERATOR
    ========================================================================== */
-.coupons-grid {
+.blessing-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 2rem;
 }
 
-.coupon-ticket {
-    position: relative;
+.blessing-card {
     padding: 2.2rem 1.8rem;
-    border-radius: var(--radius-md);
-    background: var(--bg-glass);
-    border: 2px dashed var(--gold-light);
-    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all var(--transition-base);
 }
 
-.ticket-cutout-left, .ticket-cutout-right {
-    position: absolute;
-    top: 50%;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--bg-dark);
-    transform: translateY(-50%);
+.blessing-card:hover, .blessing-card.active {
+    border-color: var(--gold-light);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px var(--gold-glow);
 }
 
-.ticket-cutout-left { left: -12px; border-right: 2px dashed var(--gold-light); }
-.ticket-cutout-right { right: -12px; border-left: 2px dashed var(--gold-light); }
+.blessing-symbol {
+    font-size: 2.8rem;
+    margin-bottom: 0.35rem;
+    animation: iconFloat 2s ease-in-out infinite alternate;
+}
 
-.coupon-badge {
-    font-size: 0.72rem;
-    font-weight: 800;
+.blessing-card h3 {
+    font-family: var(--font-hindi);
+    font-size: 1.25rem;
     color: var(--gold-light);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
 }
 
-.coupon-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-}
-
-.coupon-content p {
+.blessing-en {
     font-size: 0.88rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
     line-height: 1.5;
+    flex: 1;
 }
 
-.stamp-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(13, 8, 24, 0.88);
-    backdrop-filter: blur(4px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--emerald-green);
-    border: 4px solid var(--emerald-green);
-    transform: rotate(-12deg) scale(0.9);
-    z-index: 5;
-}
-
-.stamp-overlay.active {
-    display: flex;
-    animation: stampSlam 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-@keyframes stampSlam {
-    0% { opacity: 0; transform: rotate(-25deg) scale(2); }
-    100% { opacity: 1; transform: rotate(-12deg) scale(1); }
+.blessing-status {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold-shimmer);
+    padding: 0.3rem 0.8rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--border-gold);
+    border-radius: var(--radius-full);
 }
 
 /* ==========================================================================
-   7. SISTER'S HEARTFELT PARCHMENT LETTER
+   7. SISTER'S REGAL SCROLL LETTER
    ========================================================================== */
-.parchment-container {
-    max-width: 820px;
+.regal-scroll-container {
+    max-width: 840px;
     margin: 0 auto;
-    padding: 4rem 3.5rem;
+    padding: 4.5rem 3.5rem;
     position: relative;
-    background: radial-gradient(circle at center, rgba(46, 26, 77, 0.85) 0%, rgba(23, 15, 40, 0.95) 100%);
+    background: radial-gradient(circle at center, rgba(30, 36, 80, 0.85) 0%, rgba(15, 18, 42, 0.95) 100%);
     border: 2px solid var(--border-gold);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px var(--gold-glow);
 }
 
-.parchment-seal {
+.royal-wax-seal {
     position: absolute;
     top: -28px;
     left: 50%;
@@ -1358,119 +1259,59 @@ h1, h2, h3, h4, h5, h6 {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: radial-gradient(circle, #be123c 0%, #881337 100%);
-    border: 3px solid #fbbf24;
+    background: radial-gradient(circle, #b91c1c 0%, #7f1d1d 100%);
+    border: 3px solid #fde047;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-.letter-greeting {
-    font-family: var(--font-cursive);
+.om-seal {
+    font-size: 1.8rem;
+    color: #fde047;
+    font-weight: bold;
+}
+
+.scroll-greeting {
+    font-family: var(--font-hindi);
     font-size: 2.2rem;
     color: var(--gold-light);
     margin-bottom: 1.5rem;
 }
 
-.letter-para {
-    font-size: 1.08rem;
-    color: var(--text-light);
-    line-height: 1.85;
+.scroll-para {
+    font-family: var(--font-hindi);
+    font-size: 1.15rem;
+    color: var(--text-main);
+    line-height: 1.9;
     margin-bottom: 1.25rem;
 }
 
-.letter-signature {
+.scroll-signature {
     margin-top: 2.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-gold);
 }
 
-.letter-signature span {
-    font-size: 0.95rem;
+.sign-sub {
+    font-family: var(--font-hindi);
+    font-size: 1rem;
     color: var(--text-muted);
 }
 
-.letter-signature h4 {
-    font-family: var(--font-cursive);
-    font-size: 2rem;
+.sign-name {
+    font-family: var(--font-hindi);
+    font-size: 1.8rem;
     color: var(--gold-light);
     margin-top: 0.25rem;
 }
 
 /* ==========================================================================
-   8. SISTER'S SHAGUN / GIFT CALCULATOR
-   ========================================================================== */
-.shagun-box {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 3rem 2.5rem;
-}
-
-.shagun-slider-wrapper {
-    margin-bottom: 2.5rem;
-}
-
-.slider-label {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: var(--gold-light);
-    text-align: center;
-}
-
-#gift-slider {
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    outline: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    accent-color: var(--gold-light);
-}
-
-.slider-ticks {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.75rem;
-    font-size: 0.82rem;
-    color: var(--text-dim);
-}
-
-.gift-feedback-display {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.25);
-    padding: 2.5rem 2rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-gold);
-}
-
-.feedback-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    animation: badgeFloat 2s ease-in-out infinite alternate;
-}
-
-.gift-feedback-display h3 {
-    font-size: 1.6rem;
-    color: var(--gold-light);
-    margin-bottom: 0.5rem;
-}
-
-.gift-feedback-display p {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-/* ==========================================================================
-   9. FOOTER
+   8. FOOTER
    ========================================================================== */
 .footer {
-    background: #090412;
+    background: #060710;
     border-top: 1px solid var(--border-gold);
     padding: 4.5rem 0 2.5rem 0;
     text-align: center;
@@ -1478,12 +1319,12 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.footer-rakhi-art {
+.footer-symbols {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
 }
 
@@ -1507,15 +1348,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto 1.75rem auto;
 }
 
-.copyright {
+.footer-copyright {
     font-size: 0.85rem;
     color: var(--text-dim);
 }
 
 /* Animations */
-@keyframes badgeFloat {
+@keyframes iconFloat {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
+    100% { transform: translateY(-7px); }
 }
 
 .animate-fade-up {
@@ -1534,7 +1375,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   10. RESPONSIVE MEDIA QUERIES
+   9. RESPONSIVE QUERIES
    ========================================================================== */
 @media (max-width: 992px) {
     .hero-container {
@@ -1542,15 +1383,19 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 
-    .hero-subtext {
+    .hero-subtitle {
         margin: 0 auto 2rem auto;
     }
 
-    .hero-action-buttons {
+    .hero-cta-group {
         justify-content: center;
     }
 
-    .thali-stage {
+    .shloka-banner {
+        text-align: left;
+    }
+
+    .thali-stage-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1570,7 +1415,7 @@ h1, h2, h3, h4, h5, h6 {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: rgba(13, 8, 24, 0.98);
+        background: rgba(11, 13, 27, 0.98);
         backdrop-filter: blur(20px);
         border-left: 1px solid var(--border-gold);
         padding: 5rem 1.5rem 2rem 1.5rem;
@@ -1595,15 +1440,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 
-    .parchment-container {
+    .regal-scroll-container {
         padding: 3rem 1.5rem;
     }
 
     .section-padding {
         padding: 4.5rem 0;
-    }
-
-    .slider-ticks {
-        font-size: 0.7rem;
     }
 }
