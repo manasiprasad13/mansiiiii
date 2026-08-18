@@ -3,83 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Happy Raksha Bandhan to respected Bade Bhai (Tarachand Bhai). A respectful, heartfelt, and joyful celebration website crafted with reverence and love by your sister Bittu.">
+    <meta name="description" content="Happy Rakhi Day to my favorite duo brothers Parth (Shizuka) & Sparsh (Sparshika)! An interactive, hilarious, and loving Raksha Bandhan celebration website crafted by sister Bittu.">
     <meta name="author" content="Bittu">
-    <title>✨ Happy Rakhi Day Bade Bhai | Tarachand Bhai 🙏💖</title>
+    <title>✨ Happy Rakhi Day to Shizuka & Sparshika! 🎀🌸💖</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rowdies:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Stylesheet -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating Marigold & Golden Sparkles Canvas -->
-    <canvas id="festive-canvas"></canvas>
+    <!-- Floating Festive Particles & Blossom Petals Canvas -->
+    <canvas id="duo-canvas"></canvas>
 
-    <!-- Confetti & Blessing Canvas -->
+    <!-- Confetti & Celebration Canvas -->
     <canvas id="confetti-canvas"></canvas>
 
-    <!-- Ambient Glowing Orbs -->
+    <!-- Ambient Glow Orbs -->
+    <div class="ambient-glow glow-pink"></div>
+    <div class="ambient-glow glow-cyan"></div>
     <div class="ambient-glow glow-gold"></div>
-    <div class="ambient-glow glow-royal-blue"></div>
-    <div class="ambient-glow glow-crimson"></div>
 
-    <!-- 🎁 RESPECTFUL WELCOME MODAL / PRANAAM POPUP -->
-    <div class="welcome-overlay" id="welcome-overlay">
-        <div class="welcome-modal-card glass-panel animate-bounce">
-            <div class="royal-emblem">
-                <div class="namaste-icon-wrap">
-                    <span class="namaste-emoji">🙏</span>
+    <!-- 🎁 DUAL SURPRISE UNBOXING MODAL (Auto-visible on load) -->
+    <div class="surprise-overlay" id="surprise-overlay">
+        <div class="surprise-modal-card glass-panel animate-bounce">
+            <div class="duo-gift-icons">
+                <div class="gift-icon shizuka-gift" id="gift-1">
+                    <span class="gift-emoji">🎀</span>
+                    <span class="gift-name-tag">Shizuka (Parth)</span>
+                </div>
+                <div class="gift-icon sparshika-gift" id="gift-2">
+                    <span class="gift-emoji">🌸</span>
+                    <span class="gift-name-tag">Sparshika (Sparsh)</span>
                 </div>
             </div>
-            <span class="royal-tag">आदरणीय बड़े भाई के लिए पावन संदेश</span>
-            <h2 class="welcome-title">Happy Raksha Bandhan, <span class="text-gold">Bade Bhai</span> 🙏</h2>
-            <p class="welcome-subtitle">
-                Wishing you a joyous and blessed Rakhi day filled with good health, immense respect, and everlasting happiness.
+
+            <span class="mischief-badge">🔥 DOUBLE TROUBLE SPECIAL DELIVERY 🔥</span>
+            <h2 class="surprise-title">A Special Surprise for <br><span class="glow-shizuka">Shizuka</span> & <span class="glow-sparshika">Sparshika</span>! 🎁</h2>
+            <p class="surprise-subtitle">
+                Warning: 100% Sibling Mischief, Endless Banter & Pure Sister Love inside!
             </p>
-            <div class="sanskrit-shloka-mini">
-                "येन बद्धो बली राजा दानवेन्द्रो महाबलः। तेन त्वामपि बध्नामि रक्षे मा चल मा चल॥"
-            </div>
-            <button class="btn btn-royal-gold btn-pulse" id="enter-celebration-btn">
-                <i class="fa-solid fa-hands-praying"></i>
-                <span>Open Sister's Rakhi Wishes & Pranaam</span>
+            <button class="btn btn-duo-rainbow btn-pulse" id="open-duo-surprise-btn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Tap to Open Your Dual Rakhi Surprise!</span>
             </button>
         </div>
     </div>
 
-    <!-- REGAL NAVBAR -->
+    <!-- STICKY FESTIVE NAVBAR -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="brand-logo">
-                <span class="logo-icon">🪢</span>
-                <span class="logo-text">Bade Bhai <span class="name-highlight">Tarachand</span></span>
+                <span class="duo-emoji">🎀🌸</span>
+                <span class="logo-text"><span class="txt-shizuka">Shizuka</span> & <span class="txt-sparshika">Sparshika</span></span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="#ceremony" class="nav-link"><i class="fa-solid fa-hands-praying"></i> Rakhi Ritual</a></li>
-                    <li><a href="#tribute" class="nav-link"><i class="fa-solid fa-crown"></i> Why Best Bhai</a></li>
-                    <li><a href="#blessings" class="nav-link"><i class="fa-solid fa-star"></i> Blessings</a></li>
-                    <li><a href="#letter" class="nav-link"><i class="fa-solid fa-scroll"></i> Sister's Letter</a></li>
+                    <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-heart"></i> Wishes</a></li>
+                    <li><a href="#profiles" class="nav-link"><i class="fa-solid fa-user-ninja"></i> Duo Dossier</a></li>
+                    <li><a href="#ceremony" class="nav-link"><i class="fa-solid fa-hands-holding"></i> Dual Rakhi</a></li>
+                    <li><a href="#roasts" class="nav-link"><i class="fa-solid fa-face-laugh-squint"></i> Jokes & Roasts</a></li>
+                    <li><a href="#coupons" class="nav-link"><i class="fa-solid fa-ticket"></i> Brother Coupons</a></li>
+                    <li><a href="#letter" class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> Sister's Letter</a></li>
                 </ul>
             </nav>
 
             <div class="nav-controls">
-                <button class="icon-btn audio-btn" id="audio-toggle" title="Play Soothing Festive Melody" aria-label="Toggle Melody">
+                <button class="icon-btn audio-btn" id="audio-toggle" title="Play Upbeat Festive Melody" aria-label="Toggle Melody">
                     <i class="fa-solid fa-music" id="audio-icon"></i>
                     <span class="music-bars" id="music-bars">
                         <span></span><span></span><span></span>
                     </span>
                 </button>
-                <a href="#ceremony" class="btn btn-sm btn-royal-gold hide-mobile">Perform Ritual 🙏</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <a href="#ceremony" class="btn btn-sm btn-duo-pink hide-mobile">Tie Dual Rakhi 🪢</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -91,324 +95,465 @@
         <section class="hero-section" id="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="reverence-badge animate-fade-in">
-                        <span class="badge-icon">🪷</span>
-                        <span>सादर प्रणाम एवं रक्षाबंधन की हार्दिक शुभकामनाएं</span>
-                        <span class="badge-icon">🪷</span>
+                    <div class="fun-pill animate-fade-in">
+                        <span>✨ Double the Brothers, Double the Drama, Double the Love! ✨</span>
                     </div>
 
-                    <h1 class="hero-title animate-fade-up delay-1">
+                    <h1 class="hero-main-title animate-fade-up delay-1">
                         Happy Rakhi Day,
                         <br>
-                        <span class="bade-bhai-text text-gold">Bade Bhai!</span> 🙏💖
+                        <span class="hero-shizuka-text glow-shizuka">Shizuka</span> & <span class="hero-sparshika-text glow-sparshika">Sparshika!</span> 🎀🌸💖
                     </h1>
 
-                    <p class="hero-subtitle animate-fade-up delay-2">
-                        To my dearest <strong>Tarachand Bhai (Bade Bhai)</strong> — Thank you for being the protective pillar of our family, my wise mentor, and the most caring elder brother. Wishing you a long, healthy, joyful, and successful life!
+                    <p class="hero-subtext animate-fade-up delay-2">
+                        To my two wonderful brothers — <strong>Parth (aka Shizuka 🎀)</strong> and <strong>Sparsh (aka Sparshika 🌸)</strong>! Life is 100x louder, funnier, and crazier with both of you. Wishing you both boundless joy, endless treats, and maximum happiness today!
                     </p>
 
                     <div class="hero-cta-group animate-fade-up delay-3">
-                        <button class="btn btn-royal-gold btn-glow" id="hero-blessing-btn">
-                            <i class="fa-solid fa-hands-holding-circle"></i>
-                            <span>Offer Sister's Pranaam & Wishes</span>
+                        <button class="btn btn-duo-pink btn-glow" id="hero-celebrate-btn">
+                            <i class="fa-solid fa-party-horn"></i>
+                            <span>Shower Double Rakhi Blessings!</span>
                         </button>
-                        <a href="#ceremony" class="btn btn-royal-outline">
-                            <i class="fa-solid fa-hands-praying"></i>
-                            <span>Perform Vedic Rakhi Ritual</span>
+                        <a href="#ceremony" class="btn btn-duo-outline">
+                            <i class="fa-solid fa-hands-holding"></i>
+                            <span>Perform Dual Rakhi Ritual</span>
                         </a>
                     </div>
 
-                    <!-- Sanskrit Shloka Card -->
-                    <div class="shloka-banner glass-panel animate-fade-up delay-4">
-                        <div class="shloka-icon"><i class="fa-solid fa-om"></i></div>
-                        <div class="shloka-content">
-                            <p class="sanskrit-text">
-                                "रक्षाबंधनं पवित्रं हि स्नेहस्य च प्रतीककम्। भ्रातृ-भगिनी-सम्बन्धः चिरं विजयते सदा॥"
-                            </p>
-                            <span class="shloka-meaning">
-                                (The sacred bond of Rakhi is the eternal symbol of pure love, respect, and everlasting sibling harmony.)
-                            </span>
+                    <div class="joke-banner glass-panel animate-fade-up delay-4">
+                        <div class="joke-icon">😜</div>
+                        <div class="joke-text">
+                            <strong>Official Sister Rule:</strong> "Having two brothers means I get double the gifts, double the chocolate, and two personal bodyguards whenever I need them!"
+                            <div class="sister-signature">— Forever Your Bossy Sister, Bittu 👑</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- HERO 3D ROYAL RAKHI MANDALA -->
+                <!-- HERO 3D DUAL RAKHI SHOWCASE -->
                 <div class="hero-visual animate-fade-up delay-2">
-                    <div class="royal-rakhi-card tilt-card" id="hero-rakhi-card">
-                        <div class="card-glow-aura"></div>
+                    <div class="dual-rakhi-card tilt-card" id="dual-rakhi-card">
+                        <div class="dual-aura"></div>
                         
-                        <div class="royal-mandala-wrapper">
-                            <div class="sacred-thread thread-left"></div>
-                            
-                            <div class="royal-mandala-center">
-                                <div class="mandala-outer-ring"></div>
-                                <div class="mandala-middle-gold">
-                                    <div class="mandala-gem-ruby">
-                                        <span class="royal-shree">श्री</span>
+                        <div class="duo-rakhis-display">
+                            <!-- Shizuka Rakhi -->
+                            <div class="single-rakhi-box shizuka-box">
+                                <span class="box-badge">For Parth</span>
+                                <div class="mini-rakhi pink-rakhi">
+                                    <div class="rakhi-thread"></div>
+                                    <div class="rakhi-core">
+                                        <span>🎀</span>
                                     </div>
+                                    <div class="rakhi-thread"></div>
                                 </div>
+                                <h4>Shizuka Special 🎀</h4>
                             </div>
 
-                            <div class="sacred-thread thread-right"></div>
+                            <div class="duo-connector">&amp;</div>
+
+                            <!-- Sparshika Rakhi -->
+                            <div class="single-rakhi-box sparshika-box">
+                                <span class="box-badge">For Sparsh</span>
+                                <div class="mini-rakhi cyan-rakhi">
+                                    <div class="rakhi-thread"></div>
+                                    <div class="rakhi-core">
+                                        <span>🌸</span>
+                                    </div>
+                                    <div class="rakhi-thread"></div>
+                                </div>
+                                <h4>Sparshika Special 🌸</h4>
+                            </div>
                         </div>
 
-                        <div class="rakhi-details">
-                            <h3 class="rakhi-title">Sacred Raksha Sutra</h3>
-                            <p class="rakhi-caption">Dedicated with deep reverence & love to Tarachand Bhai</p>
-                            <div class="virtue-chips">
-                                <span class="chip"><i class="fa-solid fa-shield"></i> Protection</span>
-                                <span class="chip"><i class="fa-solid fa-brain"></i> Wisdom</span>
-                                <span class="chip"><i class="fa-solid fa-heart"></i> Respect</span>
-                                <span class="chip"><i class="fa-solid fa-sun"></i> Prosperity</span>
-                            </div>
+                        <div class="dual-card-footer">
+                            <div class="bond-pill"><i class="fa-solid fa-shield-cat"></i> Double Protection</div>
+                            <div class="bond-pill"><i class="fa-solid fa-pizza-slice"></i> Shared Pizza Feasts</div>
+                            <div class="bond-pill"><i class="fa-solid fa-infinity"></i> Unbreakable Sibling Bond</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: SACRED VIRTUAL RAKHI RITUAL -->
+        <!-- SECTION 2: BROTHER PROFILES (DUO DOSSIER & MISCHIEF METER) -->
+        <section class="profiles-section section-padding" id="profiles">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge"><i class="fa-solid fa-id-card"></i> Top Secret Intel</span>
+                    <h2 class="section-title">The <span class="txt-shizuka">Shizuka</span> & <span class="txt-sparshika">Sparshika</span> Dossier</h2>
+                    <p class="section-desc">An official sibling evaluation of both brothers. Click to inspect their strengths and weaknesses!</p>
+                </div>
+
+                <div class="profiles-grid">
+                    <!-- Profile 1: Parth (Shizuka) -->
+                    <div class="profile-card shizuka-card glass-panel tilt-card">
+                        <div class="profile-header">
+                            <div class="avatar-badge-icon pink-bg">🎀</div>
+                            <div class="profile-title-box">
+                                <span class="real-name">Real Name: <strong>Parth</strong></span>
+                                <h3>Code Name: <span class="txt-shizuka">Shizuka</span></h3>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-stats">
+                            <div class="p-stat">
+                                <span class="p-label">Drama Level</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
+                                <span class="p-val">95%</span>
+                            </div>
+                            <div class="p-stat">
+                                <span class="p-label">Excuse Making</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 98%;"></div></div>
+                                <span class="p-val">98%</span>
+                            </div>
+                            <div class="p-stat">
+                                <span class="p-label">Loving Brother</span>
+                                <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
+                                <span class="p-val">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-perks">
+                            <div class="perk-item"><strong>🦸 Superpower:</strong> Complaining to Mummy within 0.2 seconds!</div>
+                            <div class="perk-item"><strong>💬 Catchphrase:</strong> "Mummy dekho Bittu kya kar rahi hai!"</div>
+                            <div class="perk-item"><strong>🍬 Weakness:</strong> Silk Chocolate & Sister's emotional blackmail.</div>
+                        </div>
+                    </div>
+
+                    <!-- Profile 2: Sparsh (Sparshika) -->
+                    <div class="profile-card sparshika-card glass-panel tilt-card">
+                        <div class="profile-header">
+                            <div class="avatar-badge-icon cyan-bg">🌸</div>
+                            <div class="profile-title-box">
+                                <span class="real-name">Real Name: <strong>Sparsh</strong></span>
+                                <h3>Code Name: <span class="txt-sparshika">Sparshika</span></h3>
+                            </div>
+                        </div>
+
+                        <div class="profile-stats">
+                            <div class="p-stat">
+                                <span class="p-label">Remote Stealing</span>
+                                <div class="stat-bar"><div class="stat-fill cyan" style="width: 99%;"></div></div>
+                                <span class="p-val">99%</span>
+                            </div>
+                            <div class="p-stat">
+                                <span class="p-label">Snack Sneaking</span>
+                                <div class="stat-bar"><div class="stat-fill cyan" style="width: 92%;"></div></div>
+                                <span class="p-val">92%</span>
+                            </div>
+                            <div class="p-stat">
+                                <span class="p-label">Loving Brother</span>
+                                <div class="stat-bar"><div class="stat-fill cyan" style="width: 100%;"></div></div>
+                                <span class="p-val">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-perks">
+                            <div class="perk-item"><strong>🦸 Superpower:</strong> Blaming Parth for everything that breaks!</div>
+                            <div class="perk-item"><strong>💬 Catchphrase:</strong> "Maine kuch nahi kiya, sab Shizuka ne kiya!"</div>
+                            <div class="perk-item"><strong>🍕 Weakness:</strong> Double cheese pizza & long afternoon naps.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Fun Vote Box -->
+                <div class="fun-vote-box glass-panel text-center">
+                    <h3>🏆 The Great Sibling Debate: Who is More Mischievous?</h3>
+                    <p>Click below to cast your vote for today!</p>
+                    <div class="vote-buttons">
+                        <button class="btn btn-duo-pink vote-btn" id="vote-shizuka">
+                            <span>Vote Shizuka 🎀</span>
+                            <span class="vote-count" id="count-shizuka">12</span>
+                        </button>
+                        <span class="vote-vs">VS</span>
+                        <button class="btn btn-duo-cyan vote-btn" id="vote-sparshika">
+                            <span>Vote Sparshika 🌸</span>
+                            <span class="vote-count" id="count-sparshika">15</span>
+                        </button>
+                    </div>
+                    <div class="vote-verdict" id="vote-verdict">
+                        Verdict: Both are equally naughty, but Bittu loves them both the most! 🥰
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DUAL VIRTUAL RAKHI CEREMONY -->
         <section class="ceremony-section section-padding" id="ceremony">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge"><i class="fa-solid fa-hands-praying"></i> वैदिक परंपरा</span>
-                    <h2 class="section-title">Sacred <span class="text-gold">Rakhi Ceremony</span></h2>
-                    <p class="section-desc">Perform the auspicious 4-step Vedic Rakhi ceremony for respected Bade Bhai.</p>
+                    <span class="section-badge"><i class="fa-solid fa-hands-holding"></i> Sacred & Fun Ritual</span>
+                    <h2 class="section-title">Dual <span class="txt-shizuka">Rakhi</span> <span class="txt-sparshika">Ceremony</span></h2>
+                    <p class="section-desc">Two brothers, two Rakhis! Complete the 4-step ritual for Shizuka & Sparshika below.</p>
                 </div>
 
-                <div class="ceremony-card glass-panel">
+                <div class="ceremony-wrapper glass-panel">
                     <!-- Progress Step Bar -->
-                    <div class="ritual-progress-bar">
-                        <div class="progress-step active" id="p-step-1">
-                            <span class="step-icon"><i class="fa-solid fa-fire"></i></span>
-                            <span class="step-title">1. Deepak Aarti</span>
+                    <div class="ceremony-steps">
+                        <div class="step-badge active" id="c-step-1">
+                            <span class="s-num">1</span>
+                            <span class="s-text">Light Diya</span>
                         </div>
-                        <div class="step-line" id="p-line-1"></div>
-                        <div class="progress-step" id="p-step-2">
-                            <span class="step-icon"><i class="fa-solid fa-circle-dot"></i></span>
-                            <span class="step-title">2. Chandan Tilak</span>
+                        <div class="s-line" id="c-line-1"></div>
+                        <div class="step-badge" id="c-step-2">
+                            <span class="s-num">2</span>
+                            <span class="s-text">Double Tilak</span>
                         </div>
-                        <div class="step-line" id="p-line-2"></div>
-                        <div class="progress-step" id="p-step-3">
-                            <span class="step-icon"><i class="fa-solid fa-hands-holding"></i></span>
-                            <span class="step-title">3. Raksha Sutra</span>
+                        <div class="s-line" id="c-line-2"></div>
+                        <div class="step-badge" id="c-step-3">
+                            <span class="s-num">3</span>
+                            <span class="s-text">Tie Two Rakhis</span>
                         </div>
-                        <div class="step-line" id="p-line-3"></div>
-                        <div class="progress-step" id="p-step-4">
-                            <span class="step-icon"><i class="fa-solid fa-candy-cane"></i></span>
-                            <span class="step-title">4. Sweets & Pranaam</span>
+                        <div class="s-line" id="c-line-3"></div>
+                        <div class="step-badge" id="c-step-4">
+                            <span class="s-num">4</span>
+                            <span class="s-text">Feed Sweets</span>
                         </div>
                     </div>
 
-                    <!-- Pooja Thali Stage -->
-                    <div class="thali-stage-grid">
-                        <!-- Brass Pooja Thali Graphic -->
-                        <div class="brass-thali-container">
-                            <div class="brass-thali" id="brass-thali">
-                                <div class="thali-inner-glow"></div>
-                                
-                                <!-- Deepak Item -->
-                                <div class="thali-item diya-box" id="diya-trigger" title="Click to light Diya">
-                                    <div class="sacred-flame" id="sacred-flame"></div>
-                                    <div class="diya-art">🪔</div>
-                                    <span class="thali-label">Deepak</span>
+                    <!-- Dual Thali & Avatars Grid -->
+                    <div class="ceremony-stage-grid">
+                        <!-- Pooja Thali -->
+                        <div class="pooja-thali-box">
+                            <div class="festive-thali" id="festive-thali">
+                                <!-- Diya -->
+                                <div class="thali-clickable diya-clickable" id="diya-node" title="Light Diya">
+                                    <div class="diya-flame" id="diya-flame"></div>
+                                    <div class="diya-emoji">🪔</div>
+                                    <span>Diya</span>
                                 </div>
 
-                                <!-- Chandan / Roli Dish -->
-                                <div class="thali-item tilak-box" id="tilak-trigger" title="Click to take Tilak">
-                                    <div class="chandan-cup">
-                                        <span class="chandan-color"></span>
-                                        <span class="akshat-grains">🌾</span>
-                                    </div>
-                                    <span class="thali-label">Roli Akshat</span>
+                                <!-- Roli Tilak -->
+                                <div class="thali-clickable roli-clickable" id="roli-node" title="Roli Tilak">
+                                    <div class="roli-cup">🔴</div>
+                                    <span>Roli</span>
                                 </div>
 
-                                <!-- Central Rakhi Item -->
-                                <div class="thali-item rakhi-box" id="rakhi-trigger" title="Click to tie Rakhi">
-                                    <div class="central-rakhi-glow">🪢</div>
-                                    <span class="thali-label">Rakhi</span>
+                                <!-- Shizuka Rakhi -->
+                                <div class="thali-clickable rakhi-1-clickable" id="rakhi-1-node" title="Shizuka's Rakhi">
+                                    <div class="r-emoji">🎀</div>
+                                    <span>Parth's</span>
                                 </div>
 
-                                <!-- Kaju Katli Sweet Item -->
-                                <div class="thali-item sweets-box" id="sweets-trigger" title="Click to offer Sweet">
-                                    <div class="kaju-plate">🍬</div>
-                                    <span class="thali-label">Kaju Katli</span>
+                                <!-- Sparshika Rakhi -->
+                                <div class="thali-clickable rakhi-2-clickable" id="rakhi-2-node" title="Sparshika's Rakhi">
+                                    <div class="r-emoji">🌸</div>
+                                    <span>Sparsh's</span>
+                                </div>
+
+                                <!-- Kaju Sweets -->
+                                <div class="thali-clickable sweets-clickable" id="sweets-node" title="Feed Sweets">
+                                    <div class="sweet-emoji">🍬</div>
+                                    <span>Kaju Katli</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Brother Avatar & Blessing Display -->
-                        <div class="avatar-ceremony-display">
-                            <div class="bade-bhai-avatar">
-                                <div class="avatar-head">
-                                    <div class="avatar-crown-icon">👑</div>
-                                    <div class="avatar-face">
-                                        <div class="tilak-mark" id="tilak-mark"></div>
-                                        <div class="avatar-eyes">
-                                            <span class="eye"></span>
-                                            <span class="eye"></span>
-                                        </div>
-                                        <div class="avatar-gentle-smile"></div>
-                                    </div>
+                        <!-- Dual Brother Avatars Stage -->
+                        <div class="dual-avatars-stage">
+                            <!-- Avatar 1: Shizuka (Parth) -->
+                            <div class="bhai-avatar-card">
+                                <div class="avatar-circle pink-border">
+                                    <div class="tilak-spot" id="tilak-1"></div>
+                                    <div class="avatar-face-art">👦🏻</div>
                                 </div>
-                                <div class="avatar-body">
-                                    <div class="royal-kurta">
-                                        <div class="wrist-zone" id="wrist-zone">
-                                            <div class="tied-raksha-sutra" id="tied-sutra">🪢 Raksha Sutra Tied</div>
-                                            <span class="wrist-tag">Bade Bhai's Wrist</span>
-                                        </div>
-                                    </div>
+                                <h4>Shizuka (Parth)</h4>
+                                <div class="wrist-slot" id="wrist-1">
+                                    <span class="wrist-text">Wrist 1</span>
+                                    <div class="tied-tag tied-pink" id="tag-1">🎀 Tied!</div>
                                 </div>
-                                <div class="pranaam-speech-bubble" id="pranaam-bubble">
-                                    🙏 सदा सुखी रहो और जीवन में खूब तरक्की करो!
-                                </div>
+                                <div class="speech-bubble" id="bubble-1">😋 Kaju Katli is MINE!</div>
                             </div>
-                            <div class="aarti-halo" id="aarti-halo"></div>
+
+                            <!-- Avatar 2: Sparshika (Sparsh) -->
+                            <div class="bhai-avatar-card">
+                                <div class="avatar-circle cyan-border">
+                                    <div class="tilak-spot" id="tilak-2"></div>
+                                    <div class="avatar-face-art">👦🏼</div>
+                                </div>
+                                <h4>Sparshika (Sparsh)</h4>
+                                <div class="wrist-slot" id="wrist-2">
+                                    <span class="wrist-text">Wrist 2</span>
+                                    <div class="tied-tag tied-cyan" id="tag-2">🌸 Tied!</div>
+                                </div>
+                                <div class="speech-bubble" id="bubble-2">😋 Half is MINE too!</div>
+                            </div>
+
+                            <div class="aarti-ring" id="aarti-ring"></div>
                         </div>
                     </div>
 
-                    <!-- Ritual Control Footer -->
-                    <div class="ceremony-control-footer">
-                        <div class="ceremony-status" id="ceremony-status-msg">
-                            चरण 1: दीप प्रज्ज्वलित करके आदरणीय बड़े भाई की आरती शुरू करें।
+                    <!-- Ritual Interactive Control Button -->
+                    <div class="ceremony-controls text-center">
+                        <div class="ceremony-status-msg" id="ceremony-status">
+                            Step 1: Tap below to light the festive Aarti Diya!
                         </div>
-                        <button class="btn btn-royal-gold btn-lg" id="ceremony-action-btn">
+                        <button class="btn btn-duo-rainbow btn-lg" id="ceremony-btn">
                             <i class="fa-solid fa-fire"></i>
-                            <span id="ceremony-btn-text">Light The Aarti Diya 🪔</span>
+                            <span id="ceremony-btn-label">Light The Aarti Diya 🪔</span>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3: TRIBUTE TO BADE BHAI (RESPECT & GRATITUDE) -->
-        <section class="tribute-section section-padding" id="tribute">
+        <!-- SECTION 4: SIBLING JOKES & ROASTS CARDS -->
+        <section class="roasts-section section-padding" id="roasts">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge"><i class="fa-solid fa-shield-halved"></i> आदर एवं आभार</span>
-                    <h2 class="section-title">Why Tarachand Bhai is the <span class="text-gold">Best Elder Brother</span></h2>
-                    <p class="section-desc">Having a supportive and loving elder brother like you is one of life's greatest blessings.</p>
+                    <span class="section-badge"><i class="fa-solid fa-masks-theater"></i> Comedy Central</span>
+                    <h2 class="section-title">Sibling <span class="txt-shizuka">Jokes</span> & <span class="txt-sparshika">Roasts</span> 😂</h2>
+                    <p class="section-desc">Because Rakhi without teasing my two brothers is completely incomplete!</p>
                 </div>
 
-                <div class="tribute-grid">
-                    <!-- Tribute Card 1 -->
-                    <div class="tribute-card glass-panel tilt-card">
-                        <div class="tribute-icon-wrap gold">
-                            <i class="fa-solid fa-compass"></i>
+                <div class="roasts-grid">
+                    <!-- Joke Card 1 -->
+                    <div class="roast-card glass-panel tilt-card">
+                        <div class="roast-top">
+                            <span class="roast-badge">Nicknames Mystery</span>
+                            <span class="roast-icon">🎀🌸</span>
                         </div>
-                        <span class="tribute-tag">मार्गदर्शक (The Wise Mentor)</span>
-                        <h3>Guiding Light & Wisdom</h3>
-                        <p>Whenever I face difficult decisions or need advice, you always guide me with calm wisdom, clarity, and unconditional support.</p>
+                        <h3>Why "Shizuka & Sparshika"?</h3>
+                        <p>People ask why I call them Shizuka and Sparshika... Because Nobita and Doraemon refused to take responsibility for their daily drama! 😂</p>
+                        <div class="roast-meter">Tease Level: <strong>100% 🔥</strong></div>
                     </div>
 
-                    <!-- Tribute Card 2 -->
-                    <div class="tribute-card glass-panel tilt-card">
-                        <div class="tribute-icon-wrap crimson">
-                            <i class="fa-solid fa-shield-heart"></i>
+                    <!-- Joke Card 2 -->
+                    <div class="roast-card glass-panel tilt-card">
+                        <div class="roast-top">
+                            <span class="roast-badge">Rakhi Math Formula</span>
+                            <span class="roast-icon">🧮</span>
                         </div>
-                        <span class="tribute-tag">संरक्षक (The Protective Shield)</span>
-                        <h3>Strong Pillar of Strength</h3>
-                        <p>Like a solid pillar, you shoulder family responsibilities with grace, dedication, and always ensure everyone is safe and happy.</p>
+                        <h3>The Sister Math Equation</h3>
+                        <p>Parth's Gift (₹1000) + Sparsh's Gift (₹1000) = Bittu's Shopping Budget! No discounts, no excuses accepted! 🛍️💵</p>
+                        <div class="roast-meter">Profit Level: <strong>Maximum 📈</strong></div>
                     </div>
 
-                    <!-- Tribute Card 3 -->
-                    <div class="tribute-card glass-panel tilt-card">
-                        <div class="tribute-icon-wrap blue">
-                            <i class="fa-solid fa-hand-holding-heart"></i>
+                    <!-- Joke Card 3 -->
+                    <div class="roast-card glass-panel tilt-card">
+                        <div class="roast-top">
+                            <span class="roast-badge">Family Hierarchy</span>
+                            <span class="roast-icon">👑</span>
                         </div>
-                        <span class="tribute-tag">अथाह स्नेह (Kindness & Care)</span>
-                        <h3>Silent, Unconditional Love</h3>
-                        <p>You may not say it in big words every day, but your actions, care, and protectiveness speak louder than anything in the world.</p>
+                        <h3>Who is Mummy's Favorite?</h3>
+                        <p>You two can keep fighting over who Mummy loves more, but deep down you both know the undisputed answer is ME (Bittu)! 😎✨</p>
+                        <div class="roast-meter">Truth Level: <strong>1000% 💯</strong></div>
                     </div>
 
-                    <!-- Tribute Card 4 -->
-                    <div class="tribute-card glass-panel tilt-card">
-                        <div class="tribute-icon-wrap emerald">
-                            <i class="fa-solid fa-trophy"></i>
+                    <!-- Joke Card 4 -->
+                    <div class="roast-card glass-panel tilt-card">
+                        <div class="roast-top">
+                            <span class="roast-badge">Brother Unity</span>
+                            <span class="roast-icon">🤝</span>
                         </div>
-                        <span class="tribute-tag">आदर्श (The Role Model)</span>
-                        <h3>Inspiring Example</h3>
-                        <p>Your hard work, humility, and positive energy inspire me to be a better person and strive for excellence in everything I do.</p>
+                        <h3>The Sibling Alliance</h3>
+                        <p>You two fight like Tom & Jerry 364 days a year, but on Rakhi day you unite instantly just to negotiate my gift down! Nice try! 😜</p>
+                        <div class="roast-meter">Partnership: <strong>Solid 💥</strong></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4: AUSPICIOUS BLESSINGS CARD GENERATOR -->
-        <section class="blessings-section section-padding" id="blessings">
+        <!-- SECTION 5: BROTHER COUPON TICKETS (REDEEMABLE!) -->
+        <section class="coupons-section section-padding" id="coupons">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge"><i class="fa-solid fa-star-and-crescent"></i> शुभाशीष व प्रार्थना</span>
-                    <h2 class="section-title">Auspicious <span class="text-gold">Prayers & Blessings</span></h2>
-                    <p class="section-desc">Click any blessing card to reveal heartfelt wishes and prayers for Bade Bhai's success and health.</p>
+                    <span class="section-badge"><i class="fa-solid fa-gift"></i> Exclusive Brother Perks</span>
+                    <h2 class="section-title">Special <span class="txt-shizuka">Brother</span> <span class="txt-sparshika">Coupons</span> 🎟️</h2>
+                    <p class="section-desc">Redeemable exclusively by Shizuka (Parth) and Sparshika (Sparsh)!</p>
                 </div>
 
-                <div class="blessing-cards-grid">
-                    <!-- Blessing 1 -->
-                    <div class="blessing-card glass-panel" data-blessing="ayushman">
-                        <div class="blessing-symbol">🌟</div>
-                        <h3>दीर्घायु एवं उत्तम स्वास्थ्य</h3>
-                        <p class="blessing-en">May you be blessed with vibrant health, abundant energy, and a long, peaceful life.</p>
-                        <span class="blessing-status">Click to Recite Prayer 🙏</span>
+                <div class="coupons-grid">
+                    <!-- Coupon 1 -->
+                    <div class="coupon-ticket glass-panel" id="c-ticket-1">
+                        <div class="coupon-notch-l"></div>
+                        <div class="coupon-notch-r"></div>
+                        <div class="c-body">
+                            <span class="c-tag">FOR SHIZUKA & SPARSHIKA</span>
+                            <h3>🍜 Midnight Maggi Feast</h3>
+                            <p>Sister Bittu will cook delicious 2 AM cheesy Maggi for both brothers without any complaints!</p>
+                            <button class="btn btn-sm btn-duo-pink coupon-btn" data-id="1">
+                                <i class="fa-solid fa-stamp"></i> Claim Coupon
+                            </button>
+                        </div>
+                        <div class="stamp-badge" id="stamp-badge-1">CLAIMED BY DUO ✅</div>
                     </div>
 
-                    <!-- Blessing 2 -->
-                    <div class="blessing-card glass-panel" data-blessing="yashasvi">
-                        <div class="blessing-symbol">🏆</div>
-                        <h3>यश, कीर्ति एवं सफलता</h3>
-                        <p class="blessing-en">May every path you walk lead to triumphant success, respect, and high achievements.</p>
-                        <span class="blessing-status">Click to Recite Prayer 🙏</span>
+                    <!-- Coupon 2 -->
+                    <div class="coupon-ticket glass-panel" id="c-ticket-2">
+                        <div class="coupon-notch-l"></div>
+                        <div class="coupon-notch-r"></div>
+                        <div class="c-body">
+                            <span class="c-tag">PEACE TREATY</span>
+                            <h3>🤐 No Secret Leaks (24h)</h3>
+                            <p>Sister promises not to snitch to Mummy and Papa about any broken things or funny secrets for 24 hours!</p>
+                            <button class="btn btn-sm btn-duo-cyan coupon-btn" data-id="2">
+                                <i class="fa-solid fa-stamp"></i> Claim Coupon
+                            </button>
+                        </div>
+                        <div class="stamp-badge" id="stamp-badge-2">CLAIMED BY DUO ✅</div>
                     </div>
 
-                    <!-- Blessing 3 -->
-                    <div class="blessing-card glass-panel" data-blessing="samriddhi">
-                        <div class="blessing-symbol">🪙</div>
-                        <h3>सुख, शांति एवं समृद्धि</h3>
-                        <p class="blessing-en">May your days be blessed with unending prosperity, joyous laughter, and financial well-being.</p>
-                        <span class="blessing-status">Click to Recite Prayer 🙏</span>
+                    <!-- Coupon 3 -->
+                    <div class="coupon-ticket glass-panel" id="c-ticket-3">
+                        <div class="coupon-notch-l"></div>
+                        <div class="coupon-notch-r"></div>
+                        <div class="c-body">
+                            <span class="c-tag">FOOD SHARING PASS</span>
+                            <h3>🍕 Extra Pizza Slice Pass</h3>
+                            <p>You two can share the last pizza slice without fighting over who ate more!</p>
+                            <button class="btn btn-sm btn-duo-pink coupon-btn" data-id="3">
+                                <i class="fa-solid fa-stamp"></i> Claim Coupon
+                            </button>
+                        </div>
+                        <div class="stamp-badge" id="stamp-badge-3">CLAIMED BY DUO ✅</div>
                     </div>
 
-                    <!-- Blessing 4 -->
-                    <div class="blessing-card glass-panel" data-blessing="prem">
-                        <div class="blessing-symbol">💖</div>
-                        <h3>सदा अगाध स्नेह व सुरक्षा</h3>
-                        <p class="blessing-en">May our sacred sibling bond remain evergreen, unbreakable, and cherished through all seasons.</p>
-                        <span class="blessing-status">Click to Recite Prayer 🙏</span>
+                    <!-- Coupon 4 -->
+                    <div class="coupon-ticket glass-panel" id="c-ticket-4">
+                        <div class="coupon-notch-l"></div>
+                        <div class="coupon-notch-r"></div>
+                        <div class="c-body">
+                            <span class="c-tag">NICKNAME IMMUNITY</span>
+                            <h3>🎀 1-Hour Real Name Pass</h3>
+                            <p>Sister will call you Parth & Sparsh instead of Shizuka & Sparshika for 1 whole hour! (Use wisely!)</p>
+                            <button class="btn btn-sm btn-duo-cyan coupon-btn" data-id="4">
+                                <i class="fa-solid fa-stamp"></i> Claim Coupon
+                            </button>
+                        </div>
+                        <div class="stamp-badge" id="stamp-badge-4">CLAIMED BY DUO ✅</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: SISTER'S RESPECTFUL LETTER (सम्मान पत्र) -->
+        <!-- SECTION 6: SISTER'S HEARTFELT LETTER -->
         <section class="letter-section section-padding" id="letter">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-badge"><i class="fa-solid fa-scroll"></i> श्रद्धा व स्नेह पत्र</span>
-                    <h2 class="section-title">A Letter of Respect & Love for <span class="text-gold">Bade Bhai</span></h2>
-                    <p class="section-desc">From your younger sister Bittu with utmost respect and fondness.</p>
+                    <span class="section-badge"><i class="fa-solid fa-heart"></i> From The Heart</span>
+                    <h2 class="section-title">A Letter to <span class="txt-shizuka">Shizuka</span> & <span class="txt-sparshika">Sparshika</span></h2>
+                    <p class="section-desc">Because beneath all the teasing and laughter lies infinite love.</p>
                 </div>
 
-                <div class="regal-scroll-container glass-panel">
-                    <div class="royal-wax-seal">
-                        <span class="om-seal">ॐ</span>
+                <div class="letter-parchment glass-panel">
+                    <div class="wax-seal">
+                        <span>🪢</span>
                     </div>
-                    <div class="scroll-body">
-                        <h3 class="scroll-greeting">आदरणीय बड़े भाई (Tarachand Bhai),</h3>
-                        <p class="scroll-para">
-                            सादर प्रणाम एवं रक्षाबंधन के इस पावन पर्व की आपको ढेरों शुभकामनाएं!
+
+                    <div class="letter-content">
+                        <h3 class="letter-salutation">Dear Parth (Shizuka) & Sparsh (Sparshika),</h3>
+                        <p class="l-text">
+                            Happy Raksha Bandhan to my two favorite partners-in-crime! Having one brother is an adventure, but having both of you is a full-blown carnival!
                         </p>
-                        <p class="scroll-para">
-                            आज इस खास दिन पर मैं ईश्वर से केवल यही प्रार्थना करती हूँ कि आप जीवन के हर मोड़ पर सदैव स्वस्थ, प्रसन्न और सफल रहें। एक छोटे भाई-बहन के लिए बड़ा भाई केवल एक भाई नहीं, बल्कि पिता तुल्य मार्गदर्शक और जीवन का सबसे मजबूत आधार होता है।
+                        <p class="l-text">
+                            No matter how much we tease each other, fight over snacks, steal the TV remote, or blame each other for everyday mischief, I know that whenever I turn around, both of you are always there standing by my side like my personal superheroes.
                         </p>
-                        <p class="scroll-para">
-                            आपने हमेशा मेरा हौसला बढ़ाया है, मेरी खुशियों का ध्यान रखा है और परिवार को हमेशा प्यार और सम्मान के साथ बांध कर रखा है। आपके इसी अपनेपन और संरक्षण के लिए मैं आपकी सदैव आभारी रहूँगी।
+                        <p class="l-text">
+                            I pray that you both achieve tremendous success in your studies, careers, and life goals. May you always stay healthy, joyful, and full of positive energy. Keep smiling, stay as goofy as you are, and don't forget to combine your pocket money for my Rakhi gift! 😉
                         </p>
-                        <p class="scroll-para">
-                            यह पावन रक्षा सूत्र आपके जीवन में सकारात्मकता, यश और खुशहाली लेकर आए। आप सदा मुस्कुराते रहें और जीवन में नई ऊँचाइयों को छुएं!
-                        </p>
-                        <div class="scroll-signature">
-                            <span class="sign-sub">सदा आपकी मंगलकामना करने वाली आपकी छोटी बहन,</span>
-                            <h4 class="sign-name">बिट्टू (Bittu) 🌸🙏</h4>
+                        <div class="letter-foot">
+                            <span class="foot-sub">With unlimited love, big hugs, and endless teasing,</span>
+                            <h4 class="foot-name">Your Sister, Bittu 🌸💖👑</h4>
                         </div>
                     </div>
                 </div>
@@ -419,19 +564,19 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-symbols">
-                <span>🪷</span>
+            <div class="footer-icons">
+                <span>🎀</span>
                 <span class="footer-rakhi">🪢</span>
-                <span>🪷</span>
+                <span>🌸</span>
             </div>
-            <h3 class="footer-title">Happy Raksha Bandhan to Respected Bade Bhai!</h3>
-            <p class="footer-subtext">Dedicated with utmost respect, gratitude, and sisterly love by Bittu for Tarachand Bhai.</p>
+            <h3 class="footer-title">Happy Raksha Bandhan to Shizuka & Sparshika!</h3>
+            <p class="footer-subtext">Designed & coded with endless laughter, mischief, and love by sister Bittu for Parth & Sparsh.</p>
             <div class="footer-divider"></div>
-            <p class="footer-copyright">&copy; 2026 Raksha Bandhan Celebration for Tarachand Bhai. All Sister's Blessings & Respect. 🙏✨</p>
+            <p class="copyright">&copy; 2026 Rakhi Celebration for Parth & Sparsh. All Sister Privileges Reserved! ✨</p>
         </div>
     </footer>
 
-    <!-- Script -->
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
